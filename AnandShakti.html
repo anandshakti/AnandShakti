@@ -6,7 +6,6 @@
     <title>आनंद शक्ति - प्रीमियम डिजिटल अनुभव</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Hindi: Tiro Devanagari (classic traditional) | English: Cormorant Garamond (luxury serif) | UI: Cinzel -->
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&family=Yatra+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -20,28 +19,19 @@
             --text-light: #fdf0d8;
             --text-muted: #c8a97a;
         }
- 
         * { box-sizing: border-box; margin: 0; padding: 0; }
- 
-        /* ── FONT SWITCHING ── */
         body { font-family: 'Tiro Devanagari Hindi', serif; }
         body.english-mode { font-family: 'Cormorant Garamond', serif; }
- 
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
- 
         body.english-mode .hi { display: none !important; }
         body:not(.english-mode) .en { display: none !important; }
- 
-        /* ── SPIRITUAL SVG BACKGROUNDS ── */
-        .bg-mandala {
-            position: relative;
-            overflow: hidden;
-        }
+
+        .bg-mandala { position: relative; overflow: hidden; }
         .bg-mandala::before {
             content: '';
             position: absolute; inset: 0; z-index: 0;
@@ -50,21 +40,14 @@
                 radial-gradient(ellipse 60% 40% at 80% 80%, rgba(212,137,10,0.12) 0%, transparent 60%),
                 var(--bg-dark);
         }
- 
-        /* Lotus SVG background pattern */
-        .bg-lotus-pattern {
-            position: relative;
-        }
+        .bg-lotus-pattern { position: relative; }
         .bg-lotus-pattern::before {
             content: '';
             position: absolute; inset: 0; z-index: 0;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.12'/%3E%3Ccircle cx='60' cy='60' r='40' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.1'/%3E%3Ccircle cx='60' cy='60' r='25' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.08'/%3E%3Cline x1='5' y1='60' x2='115' y2='60' stroke='%23ff9933' stroke-width='0.3' stroke-opacity='0.08'/%3E%3Cline x1='60' y1='5' x2='60' y2='115' stroke='%23ff9933' stroke-width='0.3' stroke-opacity='0.08'/%3E%3Cline x1='20' y1='20' x2='100' y2='100' stroke='%23ff9933' stroke-width='0.3' stroke-opacity='0.06'/%3E%3Cline x1='100' y1='20' x2='20' y2='100' stroke='%23ff9933' stroke-width='0.3' stroke-opacity='0.06'/%3E%3C/svg%3E");
             opacity: 1;
         }
- 
-        .bg-omkara {
-            position: relative;
-        }
+        .bg-omkara { position: relative; }
         .bg-omkara::before {
             content: '';
             position: absolute; inset: 0; z-index: 0;
@@ -81,9 +64,10 @@
             z-index: 0;
             pointer-events: none;
             line-height: 1;
+            animation: floatOM 8s ease-in-out infinite;
         }
- 
-        /* ── NAVBAR ── */
+
+        /* NAVBAR */
         .top-navbar {
             position: fixed; top: 0; left: 0; width: 100%;
             background: rgba(13, 7, 2, 0.96);
@@ -91,17 +75,7 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 14px 50px; z-index: 1000;
             border-bottom: 1px solid rgba(255,153,51,0.25);
-        }
-        .logo-text {
-            font-family: 'Cinzel', serif;
-            font-size: 26px; font-weight: 900;
-            color: var(--saffron);
-            letter-spacing: 3px;
-            text-shadow: 0 0 30px rgba(255,153,51,0.4);
-        }
-        .logo-sub {
-            font-family: 'Tiro Devanagari Hindi', serif;
-            font-size: 13px; color: var(--text-muted); letter-spacing: 2px;
+            animation: borderPulse 4s ease-in-out infinite;
         }
         .lang-toggle-btn {
             background: transparent;
@@ -113,20 +87,17 @@
             font-family: 'Cinzel', serif;
         }
         .lang-toggle-btn:hover { background: var(--saffron); color: var(--bg-dark); }
- 
-        /* ── SECTIONS ── */
+
         section {
             width: 100%; display: flex; justify-content: center; align-items: center;
             padding: 100px 30px; position: relative;
         }
         .container { width: 100%; max-width: 1300px; position: relative; z-index: 2; }
- 
         .section-separator {
             width: 70%; height: 1px; margin: 0 auto;
             background: linear-gradient(90deg, transparent, rgba(255,153,51,0.35), rgba(212,137,10,0.2), transparent);
         }
- 
-        /* ── TYPOGRAPHY ── */
+
         h1 {
             font-family: 'Cinzel', serif;
             font-size: 84px; font-weight: 900; line-height: 1.05;
@@ -134,11 +105,7 @@
             text-shadow: 0 0 60px rgba(255,153,51,0.3), 0 4px 20px rgba(0,0,0,0.8);
             letter-spacing: 4px;
         }
-        body:not(.english-mode) h1 {
-            font-family: 'Yatra One', cursive;
-            letter-spacing: 2px;
-        }
- 
+        body:not(.english-mode) h1 { font-family: 'Yatra One', cursive; letter-spacing: 2px; }
         .section-title {
             font-family: 'Cinzel', serif;
             font-size: 42px; font-weight: 700;
@@ -146,39 +113,22 @@
             border-left: 6px solid var(--saffron); padding-left: 22px;
             letter-spacing: 2px; text-transform: uppercase;
         }
-        body:not(.english-mode) .section-title {
-            font-family: 'Yatra One', cursive;
-            letter-spacing: 1px; text-transform: none;
-        }
- 
-        p, li {
-            font-size: 20px; line-height: 1.75; color: var(--text-light);
-        }
-        body.english-mode p, body.english-mode li {
-            font-size: 21px; font-family: 'Cormorant Garamond', serif;
-        }
- 
-        /* ── HERO ── */
+        body:not(.english-mode) .section-title { font-family: 'Yatra One', cursive; letter-spacing: 1px; text-transform: none; }
+        p, li { font-size: 20px; line-height: 1.75; color: var(--text-light); }
+        body.english-mode p, body.english-mode li { font-size: 21px; font-family: 'Cormorant Garamond', serif; }
+
         .hero-subtitle {
             font-family: 'Cormorant Garamond', serif;
             font-size: 28px; color: var(--gold); letter-spacing: 6px;
             font-style: italic; font-weight: 400;
         }
-        body:not(.english-mode) .hero-subtitle {
-            font-family: 'Tiro Devanagari Hindi', serif;
-            letter-spacing: 4px; font-style: normal;
-        }
- 
-        /* ── SPIRITUAL DIVIDER ORNAMENT ── */
-        .ornament {
-            display: flex; align-items: center; gap: 20px;
-            justify-content: center; margin: 20px 0 40px;
-        }
+        body:not(.english-mode) .hero-subtitle { font-family: 'Tiro Devanagari Hindi', serif; letter-spacing: 4px; font-style: normal; }
+
+        .ornament { display: flex; align-items: center; gap: 20px; justify-content: center; margin: 20px 0 40px; }
         .ornament-line { flex: 1; max-width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--saffron)); }
         .ornament-line.rev { background: linear-gradient(90deg, var(--saffron), transparent); }
         .ornament-symbol { font-size: 28px; color: var(--saffron); }
- 
-        /* ── ACTION BAR ── */
+
         .top-premium-actions {
             display: flex; justify-content: center; gap: 18px;
             margin: 35px auto 0;
@@ -199,8 +149,7 @@
         .btn-whatsapp:hover { background: #25D366; color: #fff; }
         .btn-youtube { background: linear-gradient(135deg, #e60000, #900); }
         .btn-youtube:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,0,0,0.45); }
- 
-        /* ── TWO COLUMN ── */
+
         .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: center; width: 100%; }
         .image-wrapper {
             border-radius: 20px; overflow: hidden;
@@ -208,8 +157,7 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,153,51,0.05);
         }
         .image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
- 
-        /* ── TILES ── */
+
         .tiled-content { display: flex; gap: 28px; width: 100%; }
         .tile {
             background: var(--bg-card);
@@ -228,8 +176,7 @@
         .tile i { font-size: 48px; color: var(--saffron); margin-bottom: 22px; }
         .tile h3 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--text-light); margin-bottom: 14px; letter-spacing: 1px; }
         body:not(.english-mode) .tile h3 { font-family: 'Yatra One', cursive; font-size: 22px; }
- 
-        /* ── BAR CHART ── */
+
         .bar-chart { display: flex; flex-direction: column; gap: 28px; width: 100%; background: rgba(0,0,0,0.3); padding: 45px; border-radius: 24px; border: 1px solid rgba(255,153,51,0.1); }
         .bar-container { display: flex; align-items: center; gap: 25px; }
         .bar-label { flex: 0 0 230px; text-align: right; font-weight: 600; font-size: 19px; color: var(--text-muted); }
@@ -237,12 +184,10 @@
         .bar-fill { height: 100%; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 8px; position: relative; }
         .bar-fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); }
         .bar-value { font-weight: 700; font-size: 20px; color: var(--saffron); width: 80px; font-family: 'Cinzel', serif; }
- 
-        /* ── GALLERY ── */
+
         .gallery-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
         .gallery-col { display: flex; flex-direction: column; gap: 20px; }
- 
-        /* ── TABLE ── */
+
         table { width: 100%; border-collapse: separate; border-spacing: 0 10px; margin-top: 25px; }
         th {
             background: linear-gradient(135deg, var(--saffron), var(--gold));
@@ -252,8 +197,7 @@
         }
         body:not(.english-mode) th { font-family: 'Yatra One', cursive; }
         td { background: rgba(255,255,255,0.04); padding: 15px 20px; font-size: 18px; border-radius: 8px; border: 1px solid rgba(255,153,51,0.07); }
- 
-        /* ── DECORATIVE BORDER FRAME (hero) ── */
+
         .hero-frame {
             border: 1px solid rgba(255,153,51,0.2);
             border-radius: 4px;
@@ -264,14 +208,10 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        .hero-frame::before, .hero-frame::after {
-            content: '✦';
-            position: absolute; font-size: 22px; color: var(--saffron);
-        }
+        .hero-frame::before, .hero-frame::after { content: '✦'; position: absolute; font-size: 22px; color: var(--saffron); }
         .hero-frame::before { top: 14px; left: 20px; }
         .hero-frame::after { bottom: 14px; right: 20px; }
- 
-        /* ── QUOTE BLOCK ── */
+
         .quote-block {
             font-family: 'Cormorant Garamond', serif;
             font-size: 28px; font-style: italic; line-height: 1.8;
@@ -283,12 +223,11 @@
         }
         body:not(.english-mode) .quote-block { font-family: 'Tiro Devanagari Hindi', serif; font-style: normal; font-size: 26px; }
         .quote-block::before { content: '\201C'; font-size: 100px; color: rgba(255,153,51,0.15); position: absolute; top: -20px; left: 30px; line-height: 1; }
- 
-        /* ── CONTACT SOCIAL ── */
+
         .social-link { font-size: 38px; color: var(--saffron); transition: 0.3s; text-decoration: none; }
         .social-link:hover { color: #fff; transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(255,153,51,0.6)); }
- 
-        /* ── FOOTER TAGLINE ── */
+        .social-link.fb:hover { color: #1877f2; filter: drop-shadow(0 0 10px rgba(24,119,242,0.6)); }
+
         .footer-tagline {
             font-family: 'Cinzel', serif;
             font-size: 80px; font-weight: 900;
@@ -297,25 +236,8 @@
             text-align: center; letter-spacing: 6px;
             filter: drop-shadow(0 0 40px rgba(255,153,51,0.25));
         }
-        body:not(.english-mode) .footer-tagline {
-            font-family: 'Yatra One', cursive;
-            letter-spacing: 2px; font-size: 76px;
-        }
- 
-        /* Om float animation */
-        @keyframes floatOM {
-            0%, 100% { transform: translateY(-50%) rotate(0deg); opacity: 0.04; }
-            50% { transform: translateY(-52%) rotate(3deg); opacity: 0.06; }
-        }
-        .bg-omkara::after { animation: floatOM 8s ease-in-out infinite; }
- 
-        /* Glow pulse on saffron borders */
-        @keyframes borderPulse {
-            0%, 100% { border-color: rgba(255,153,51,0.2); }
-            50% { border-color: rgba(255,153,51,0.5); }
-        }
-        .top-navbar { animation: borderPulse 4s ease-in-out infinite; }
-        /* ── ENHANCED ACTION BUTTON ICONS ── */
+        body:not(.english-mode) .footer-tagline { font-family: 'Yatra One', cursive; letter-spacing: 2px; font-size: 76px; }
+
         .btn-icon-wrap {
             width: 44px; height: 44px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
@@ -327,9 +249,7 @@
         .action-btn:hover .btn-icon-call { background: rgba(255,255,255,0.35); transform: scale(1.1); }
         .action-btn:hover .btn-icon-wa   { background: #25D366; color: #fff; transform: scale(1.1); }
         .action-btn:hover .btn-icon-yt   { background: #e60000; transform: scale(1.1); }
-        .action-btn { align-items: center; }
- 
-        /* ── PHOTO PLACEHOLDER BEAUTIFUL ── */
+
         .photo-placeholder {
             width: 100%; height: 100%;
             display: flex; flex-direction: column;
@@ -337,22 +257,82 @@
             background: radial-gradient(ellipse at center, rgba(255,153,51,0.1) 0%, rgba(13,7,2,0.8) 70%);
             position: relative; overflow: hidden;
         }
-        .photo-placeholder::before {
-            content: '';
-            position: absolute; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='36' fill='none' stroke='%23ff9933' stroke-width='0.5' stroke-opacity='0.15'/%3E%3Ccircle cx='40' cy='40' r='20' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.1'/%3E%3C/svg%3E");
+
+        /* ── APPOINTMENT BOOKING STYLES ── */
+        .appt-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+        .appt-card {
+            border-radius: 20px; padding: 36px 30px;
+            position: relative; overflow: hidden;
+            transition: transform 0.3s ease;
         }
-        /* ── ANIMATED BACKGROUND ── */
-        #spiritual-bg {
-            position: fixed; top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1; pointer-events: none;
+        .appt-card:hover { transform: translateY(-6px); }
+        .appt-card.wa-card {
+            background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(13,7,2,0.85));
+            border: 1px solid rgba(37,211,102,0.35);
         }
- 
-        /* Slow rotating mandala overlay */
+        .appt-card.call-card {
+            background: linear-gradient(135deg, rgba(255,153,51,0.1), rgba(13,7,2,0.85));
+            border: 1px solid rgba(255,153,51,0.35);
+        }
+        .appt-card-icon {
+            width: 60px; height: 60px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px; margin-bottom: 18px;
+        }
+        .appt-card.wa-card .appt-card-icon { background: rgba(37,211,102,0.2); color: #25D366; box-shadow: 0 0 20px rgba(37,211,102,0.25); }
+        .appt-card.call-card .appt-card-icon { background: rgba(255,153,51,0.15); color: var(--saffron); box-shadow: 0 0 20px rgba(255,153,51,0.2); }
+        .appt-card h3 { font-family: 'Yatra One', cursive; font-size: 24px; margin-bottom: 10px; }
+        body.english-mode .appt-card h3 { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 1px; }
+        .appt-card.wa-card h3 { color: #25D366; }
+        .appt-card.call-card h3 { color: var(--saffron); }
+
+        .appt-timeline {
+            display: flex; gap: 0; margin: 22px 0;
+            background: rgba(0,0,0,0.3); border-radius: 14px;
+            border: 1px solid rgba(255,153,51,0.12); overflow: hidden;
+        }
+        .appt-step {
+            flex: 1; padding: 16px 14px; text-align: center;
+            border-right: 1px solid rgba(255,153,51,0.1);
+            position: relative;
+        }
+        .appt-step:last-child { border-right: none; }
+        .appt-step-num {
+            font-family: 'Cinzel', serif; font-size: 28px; font-weight: 900;
+            color: var(--saffron); line-height: 1; margin-bottom: 6px;
+        }
+        .appt-step-label { font-size: 14px; color: var(--text-muted); line-height: 1.4; }
+
+        .appt-cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 30px; border-radius: 30px; font-size: 17px;
+            font-weight: 700; text-decoration: none; transition: 0.3s;
+            font-family: 'Cinzel', serif; letter-spacing: 1px; width: 100%;
+            justify-content: center; margin-top: 8px;
+        }
+        .appt-cta-btn.wa-btn {
+            background: #25D366; color: #fff;
+            box-shadow: 0 0 24px rgba(37,211,102,0.35);
+        }
+        .appt-cta-btn.wa-btn:hover { background: #128C7E; box-shadow: 0 0 35px rgba(37,211,102,0.5); }
+        .appt-cta-btn.call-btn {
+            background: linear-gradient(135deg, var(--saffron), var(--gold));
+            color: var(--bg-dark);
+            box-shadow: 0 0 24px rgba(255,153,51,0.3);
+        }
+        .appt-cta-btn.call-btn:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(255,153,51,0.5); }
+
+        .appt-notice {
+            background: linear-gradient(135deg, rgba(255,153,51,0.08), rgba(212,137,10,0.04));
+            border: 1px solid rgba(255,153,51,0.3);
+            border-radius: 16px; padding: 22px 28px;
+            display: flex; align-items: flex-start; gap: 16px;
+        }
+        .appt-notice i { font-size: 26px; color: var(--saffron); flex-shrink: 0; margin-top: 3px; }
+
+        /* MANDALA RINGS */
         .mandala-ring {
-            position: fixed;
-            border-radius: 50%;
+            position: fixed; border-radius: 50%;
             border: 1px solid rgba(255,153,51,0.07);
             pointer-events: none; z-index: 0;
         }
@@ -361,61 +341,90 @@
         .mr3 { width: 900px; height: 900px; top: 50%; left: 50%; margin: -450px 0 0 -450px; animation: spinSlow 80s linear infinite; border-color: rgba(255,153,51,0.04); }
         .mr4 { width: 300px; height: 300px; top: 10%; right: 5%; animation: spinSlow 30s linear infinite; border-color: rgba(255,153,51,0.05); }
         .mr5 { width: 200px; height: 200px; bottom: 15%; left: 3%; animation: spinSlow 25s linear infinite reverse; border-color: rgba(212,137,10,0.06); }
- 
-        /* Cross lines inside rings */
-        .mandala-cross {
-            position: fixed; pointer-events: none; z-index: 0;
-            top: 50%; left: 50%;
-        }
- 
+
         @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes floatOM {
+            0%, 100% { transform: translateY(-50%) rotate(0deg); opacity: 0.04; }
+            50% { transform: translateY(-52%) rotate(3deg); opacity: 0.06; }
+        }
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(255,153,51,0.2); }
+            50% { border-color: rgba(255,153,51,0.5); }
+        }
         @keyframes floatParticle {
             0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
             10%  { opacity: 1; }
             90%  { opacity: 0.7; }
             100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
         }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255,153,51,0.15), inset 0 0 20px rgba(255,153,51,0.05); }
-            50%       { box-shadow: 0 0 50px rgba(255,153,51,0.25), inset 0 0 30px rgba(255,153,51,0.08); }
+
+        /* ══ MOBILE RESPONSIVE ══ */
+        @media (max-width: 768px) {
+            .top-navbar { padding: 12px 18px; }
+            .top-navbar > div:first-child div:first-child { width: 48px !important; height: 48px !important; }
+            .top-navbar > div:first-child div:first-child span { font-size: 22px !important; }
+            .top-navbar > div:first-child > div:last-child div:first-child { font-size: 20px !important; }
+            .top-navbar > div:first-child > div:last-child div:nth-child(2) { font-size: 13px !important; }
+            .lang-toggle-btn { padding: 7px 14px; font-size: 13px; }
+
+            section { padding: 70px 16px; }
+            h1 { font-size: 44px; }
+            .hero-frame { padding: 36px 18px 32px; }
+            .hero-subtitle { font-size: 18px; letter-spacing: 2px; }
+            .top-premium-actions {
+                flex-direction: column; gap: 12px;
+                padding: 16px 18px; border-radius: 24px;
+            }
+            .action-btn { padding: 12px 20px; font-size: 15px; }
+            .section-title { font-size: 26px; padding-left: 14px; margin-bottom: 22px; }
+            .two-column { grid-template-columns: 1fr; gap: 30px; }
+            .image-wrapper { height: 260px !important; }
+            .tiled-content { flex-direction: column; }
+            .tile { padding: 28px 20px; }
+            .quote-block { padding: 28px 20px; font-size: 20px; }
+            .quote-block::before { font-size: 60px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-col { flex-direction: row; }
+            .gallery-col .image-wrapper { height: 150px !important; flex: 1; }
+            table { font-size: 14px; }
+            th { font-size: 15px; padding: 12px 10px; }
+            td { font-size: 14px; padding: 10px; }
+            .footer-tagline { font-size: 48px; }
+            .appt-methods { grid-template-columns: 1fr; }
+            .appt-timeline { flex-direction: column; gap: 0; }
+            .appt-step { border-right: none; border-bottom: 1px solid rgba(255,153,51,0.1); }
+            .appt-step:last-child { border-bottom: none; }
+
+            /* YouTube section mobile */
+            #youtube-section [style*="grid-template-columns:1fr 1fr"] { display: flex !important; flex-direction: column !important; }
+            #youtube-section [style*="grid-template-columns:repeat(3,1fr)"] { display: flex !important; flex-direction: column !important; }
+            #youtube-section [style*="display:flex"][style*="gap:40px"] { gap: 20px !important; flex-direction: column !important; }
+            #youtube-section [style*="width:1px;height:60px"] { width: 60px !important; height: 1px !important; }
         }
- 
-        /* Particle dots */
-        .particle {
-            position: fixed; border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,153,51,0.8), transparent);
-            pointer-events: none; z-index: 0;
-            animation: floatParticle linear infinite;
+
+        @media (max-width: 480px) {
+            h1 { font-size: 34px; }
+            .footer-tagline { font-size: 36px; }
+            .section-title { font-size: 22px; }
         }
     </style>
 </head>
 <body>
- 
-    <!-- ══ ANIMATED SPIRITUAL BACKGROUND ══ -->
-    <!-- Rotating mandala rings -->
+
     <div class="mandala-ring mr1"></div>
     <div class="mandala-ring mr2"></div>
     <div class="mandala-ring mr3"></div>
     <div class="mandala-ring mr4"></div>
     <div class="mandala-ring mr5"></div>
- 
-    <!-- Floating light particles (JS generated) -->
     <canvas id="spiritual-bg"></canvas>
- 
+
     <!-- NAVBAR -->
     <nav class="top-navbar">
-        <!-- ── LOGO AREA: अपनी image यहाँ paste करें ── -->
         <div style="display:flex; align-items:center; gap:14px;">
- 
-            <!-- 📌 अपना Logo Image यहाँ लगाएं: src="" में अपनी image का path डालें -->
             <div style="position:relative; width:62px; height:62px; border-radius:50%; border:2px solid rgba(255,153,51,0.5); overflow:hidden; background:radial-gradient(circle, rgba(255,153,51,0.12), rgba(13,7,2,0.9)); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 0 18px rgba(255,153,51,0.2);">
-                <!-- अपनी photo/logo यहाँ paste करें — नीचे src में path डालें -->
                 <img id="navbar-logo-img" src="" alt="" style="width:100%;height:100%;object-fit:cover;display:none;" onerror="this.style.display='none'">
-                <!-- Default OM if no image -->
                 <span id="navbar-logo-om" style="font-size:30px; color:#ff9933; font-family:'Tiro Devanagari Hindi',serif; text-shadow:0 0 15px rgba(255,153,51,0.6); line-height:1;">ॐ</span>
             </div>
- 
-            <!-- Logo Text -->
             <div>
                 <div style="font-family:'Yatra One',cursive; font-size:28px; color:#ff9933; line-height:1.1; text-shadow:0 0 20px rgba(255,153,51,0.35); letter-spacing:1px;" class="hi">आनंद शक्ति</div>
                 <div style="font-family:'Cinzel',serif; font-size:18px; color:#ff9933; line-height:1.1; letter-spacing:2px;" class="en">ĀNAND ŚAKTI</div>
@@ -425,27 +434,23 @@
         </div>
         <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langBtn">Read in English</button>
     </nav>
- 
-    <!-- ══════════════ HERO ══════════════ -->
+
+    <!-- HERO -->
     <section class="bg-mandala bg-lotus-pattern" style="padding-top: 160px; min-height: 100vh; align-items: center;">
         <div class="container">
             <div class="hero-frame">
                 <div style="text-align:center; margin-bottom: 20px;">
                     <i class="fa-solid fa-om" style="font-size: 72px; color: var(--saffron); filter: drop-shadow(0 0 20px rgba(255,153,51,0.5));"></i>
                 </div>
- 
                 <h1 class="hi">आनंद शक्ति</h1>
                 <h1 class="en">Anand Shakti</h1>
- 
                 <div class="ornament">
                     <div class="ornament-line"></div>
                     <span class="ornament-symbol">✦</span>
                     <div class="ornament-line rev"></div>
                 </div>
- 
                 <p class="hero-subtitle hi" style="text-align:center;">सत्य, सेवा और आत्मिक जागृति</p>
                 <p class="hero-subtitle en" style="text-align:center;">Truth, Service & Spiritual Awakening</p>
- 
                 <div class="top-premium-actions">
                     <a href="tel:+917080317245" class="action-btn btn-call">
                         <span class="btn-icon-wrap btn-icon-call"><i class="fa-solid fa-phone"></i></span>
@@ -461,22 +466,21 @@
                     </a>
                 </div>
             </div>
- 
             <div class="image-wrapper" style="max-width: 900px; height: 340px; margin: 50px auto 0; border-color: rgba(255,153,51,0.3);">
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/10472154144585771306" alt="Anand Shakti">
             </div>
         </div>
     </section>
- 
-    <!-- ══════════════ QUOTE ══════════════ -->
+
+    <!-- QUOTE -->
     <section style="background: linear-gradient(135deg, #1a0e08 0%, #2e1a0d 50%, #1a0e08 100%); padding: 60px 30px;">
         <div class="container">
             <div class="quote-block hi">"ईश्वरीय चेतना और लोक कल्याण की भावना ही इस पावन केंद्र का मूल स्तंभ है। आनंद शक्ति सत्य के प्रकाश से हर जीवन को रोशन करने का संकल्प है।"</div>
             <div class="quote-block en">"Divine consciousness and public welfare are the core pillars of this sacred center. Anand Shakti is a resolution to illuminate every life with the light of truth."</div>
         </div>
     </section>
- 
-    <!-- ══════════════ GURU PITA ══════════════ -->
+
+    <!-- GURU PITA -->
     <section class="bg-omkara">
         <div class="container two-column">
             <div>
@@ -492,10 +496,10 @@
             </div>
         </div>
     </section>
- 
+
     <div class="section-separator"></div>
- 
-    <!-- ══════════════ GURU PITA + MATA ══════════════ -->
+
+    <!-- GURU PITA + MATA -->
     <section class="bg-lotus-pattern" style="background-color: #120a05;">
         <div class="container two-column">
             <div class="image-wrapper" style="height:450px;">
@@ -528,10 +532,10 @@
             </div>
         </div>
     </section>
- 
+
     <div class="section-separator"></div>
- 
-    <!-- ══════════════ YOUTUBE CHANNEL HUB ══════════════ -->
+
+    <!-- YOUTUBE CHANNEL HUB -->
     <section class="bg-mandala" id="youtube-section">
         <div class="container">
             <div style="text-align:center; margin-bottom:50px;">
@@ -540,17 +544,11 @@
                 <h2 class="section-title en" style="text-align:center; border:none; font-size:48px;">YouTube Channel Hub</h2>
                 <div class="ornament"><div class="ornament-line"></div><span class="ornament-symbol">✦</span><div class="ornament-line rev"></div></div>
             </div>
- 
-            <!-- ── ROW 1: Two main channels ── -->
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:28px;">
- 
-                <!-- Main Long Videos Channel -->
                 <div style="background:linear-gradient(135deg,rgba(230,0,0,0.1),rgba(13,7,2,0.8)); border:1px solid rgba(230,0,0,0.3); border-radius:24px; padding:38px 32px; position:relative; overflow:hidden;">
-                    <div style="position:absolute;top:-20px;right:-20px;font-size:140px;color:rgba(230,0,0,0.05); font-family:sans-serif; line-height:1; pointer-events:none;">▶</div>
+                    <div style="position:absolute;top:-20px;right:-20px;font-size:140px;color:rgba(230,0,0,0.05);font-family:sans-serif;line-height:1;pointer-events:none;">▶</div>
                     <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-                        <div style="width:52px;height:52px;background:#e60000;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 0 20px rgba(230,0,0,0.4);">
-                            <i class="fa-brands fa-youtube"></i>
-                        </div>
+                        <div style="width:52px;height:52px;background:#e60000;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 0 20px rgba(230,0,0,0.4);"><i class="fa-brands fa-youtube"></i></div>
                         <div>
                             <div class="hi" style="font-family:'Yatra One',cursive;font-size:22px;color:#ff9933;">मुख्य चैनल</div>
                             <div class="en" style="font-family:'Cinzel',serif;font-size:18px;color:#ff9933;letter-spacing:1px;">MAIN CHANNEL</div>
@@ -559,17 +557,14 @@
                     </div>
                     <p class="hi" style="font-size:18px;line-height:1.7;margin-bottom:22px;">गहन सत्संग, आत्मिक प्रवचन और जीवन मार्गदर्शन के लंबे वीडियोज़।<br><strong style="color:#ff9933;">हर रविवार व बुधवार — प्रातः ०८:००</strong></p>
                     <p class="en" style="font-size:18px;line-height:1.7;margin-bottom:22px;">Deep satsang discourses, spiritual talks & life guidance in full-length videos.<br><strong style="color:#ff9933;">Every Sunday & Wednesday — 08:00 AM</strong></p>
-                    <!-- Stats row -->
                     <div style="display:flex;gap:16px;margin-bottom:24px;">
                         <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(230,0,0,0.15);">
                             <div style="font-family:'Cinzel',serif;font-size:24px;color:#e60000;font-weight:700;">1,300+</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="hi">कुल वीडियोज़</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="en">Total Videos</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">कुल वीडियोज़</div><div style="font-size:13px;color:#c8a97a;" class="en">Total Videos</div>
                         </div>
                         <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(230,0,0,0.15);">
                             <div style="font-family:'Cinzel',serif;font-size:24px;color:#e60000;font-weight:700;">600+</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="hi">लॉन्ग वीडियोज़</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="en">Long Videos</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">लॉन्ग वीडियोज़</div><div style="font-size:13px;color:#c8a97a;" class="en">Long Videos</div>
                         </div>
                     </div>
                     <a href="https://youtube.com/@anandshakti" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#e60000;color:#fff;padding:13px 28px;border-radius:30px;font-family:'Cinzel',serif;font-size:15px;letter-spacing:1px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 0 20px rgba(230,0,0,0.3);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
@@ -577,14 +572,10 @@
                         <span class="hi">चैनल खोलें</span><span class="en">Open Channel</span>
                     </a>
                 </div>
- 
-                <!-- Shorts Channel -->
                 <div style="background:linear-gradient(135deg,rgba(255,153,51,0.1),rgba(13,7,2,0.8)); border:1px solid rgba(255,153,51,0.3); border-radius:24px; padding:38px 32px; position:relative; overflow:hidden;">
-                    <div style="position:absolute;top:-10px;right:-10px;font-size:120px;color:rgba(255,153,51,0.05); font-family:sans-serif; line-height:1; pointer-events:none;">⚡</div>
+                    <div style="position:absolute;top:-10px;right:-10px;font-size:120px;color:rgba(255,153,51,0.05);font-family:sans-serif;line-height:1;pointer-events:none;">⚡</div>
                     <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-                        <div style="width:52px;height:52px;background:linear-gradient(135deg,#ff9933,#d4890a);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 0 20px rgba(255,153,51,0.35);">
-                            <i class="fa-solid fa-bolt"></i>
-                        </div>
+                        <div style="width:52px;height:52px;background:linear-gradient(135deg,#ff9933,#d4890a);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 0 20px rgba(255,153,51,0.35);"><i class="fa-solid fa-bolt"></i></div>
                         <div>
                             <div class="hi" style="font-family:'Yatra One',cursive;font-size:22px;color:#ff9933;">शॉर्ट्स चैनल</div>
                             <div class="en" style="font-family:'Cinzel',serif;font-size:18px;color:#ff9933;letter-spacing:1px;">SHORTS CHANNEL</div>
@@ -596,13 +587,11 @@
                     <div style="display:flex;gap:16px;margin-bottom:24px;">
                         <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(255,153,51,0.15);">
                             <div style="font-family:'Cinzel',serif;font-size:24px;color:#ff9933;font-weight:700;">700+</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="hi">शॉर्ट्स वीडियोज़</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="en">Shorts Uploaded</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">शॉर्ट्स वीडियोज़</div><div style="font-size:13px;color:#c8a97a;" class="en">Shorts Uploaded</div>
                         </div>
                         <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(255,153,51,0.15);">
                             <div style="font-family:'Cinzel',serif;font-size:24px;color:#ff9933;font-weight:700;">Daily</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="hi">अपलोड</div>
-                            <div style="font-size:13px;color:#c8a97a;" class="en">Upload</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">अपलोड</div><div style="font-size:13px;color:#c8a97a;" class="en">Upload</div>
                         </div>
                     </div>
                     <a href="https://youtube.com/@anandshakti/shorts" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff9933,#d4890a);color:#fff;padding:13px 28px;border-radius:30px;font-family:'Cinzel',serif;font-size:15px;letter-spacing:1px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 0 20px rgba(255,153,51,0.25);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
@@ -611,80 +600,56 @@
                     </a>
                 </div>
             </div>
- 
-            <!-- ── ROW 2: Playlist cards ── -->
+
+            <!-- PLAYLISTS -->
             <div style="margin-bottom:28px;">
                 <h3 style="font-family:'Yatra One',cursive;font-size:30px;color:#ff9933;margin-bottom:20px;border-left:5px solid #ff9933;padding-left:18px;" class="hi">प्रमुख प्लेलिस्ट</h3>
                 <h3 style="font-family:'Cinzel',serif;font-size:26px;color:#ff9933;margin-bottom:20px;border-left:5px solid #ff9933;padding-left:18px;letter-spacing:2px;" class="en">KEY PLAYLISTS</h3>
                 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
- 
-                    <!-- Playlist 1: Mera Anubhav -->
                     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#ff9933';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(255,153,51,0.2)';this.style.transform='translateY(0)'">
-                        <div style="width:44px;height:44px;background:rgba(230,0,0,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(230,0,0,0.3);">
-                            <i class="fa-solid fa-heart" style="color:#e60000;font-size:18px;"></i>
-                        </div>
+                        <div style="width:44px;height:44px;background:rgba(230,0,0,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(230,0,0,0.3);"><i class="fa-solid fa-heart" style="color:#e60000;font-size:18px;"></i></div>
                         <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#ff9933;margin-bottom:8px;">मेरा अनुभव</div>
                         <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#ff9933;margin-bottom:8px;letter-spacing:1px;">MERA ANUBHAV</div>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">गुरु पिता के व्यक्तिगत आध्यात्मिक अनुभव।</p>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Guru Pita's personal spiritual experiences.</p>
                         <div style="font-family:'Cinzel',serif;font-size:22px;color:#fff;font-weight:700;">139+ <span style="font-size:13px;color:#c8a97a;font-weight:400;">videos</span></div>
                     </div>
- 
-                    <!-- Playlist 2: Satsang -->
                     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#ff9933';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(255,153,51,0.2)';this.style.transform='translateY(0)'">
-                        <div style="width:44px;height:44px;background:rgba(255,153,51,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(255,153,51,0.3);">
-                            <i class="fa-solid fa-om" style="color:#ff9933;font-size:18px;"></i>
-                        </div>
+                        <div style="width:44px;height:44px;background:rgba(255,153,51,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(255,153,51,0.3);"><i class="fa-solid fa-om" style="color:#ff9933;font-size:18px;"></i></div>
                         <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#ff9933;margin-bottom:8px;">साप्ताहिक सत्संग</div>
                         <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#ff9933;margin-bottom:8px;letter-spacing:1px;">WEEKLY SATSANG</div>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">रविवार और बुधवार के पूर्ण सत्संग प्रवचन।</p>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Full satsang discourses from Sunday & Wednesday.</p>
                         <div style="font-family:'Cinzel',serif;font-size:22px;color:#fff;font-weight:700;">500+ <span style="font-size:13px;color:#c8a97a;font-weight:400;">videos</span></div>
                     </div>
- 
-                    <!-- Playlist 3: Shorts / Upay -->
                     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#ff9933';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(255,153,51,0.2)';this.style.transform='translateY(0)'">
-                        <div style="width:44px;height:44px;background:rgba(255,153,51,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(255,153,51,0.3);">
-                            <i class="fa-solid fa-bolt" style="color:#ff9933;font-size:18px;"></i>
-                        </div>
+                        <div style="width:44px;height:44px;background:rgba(255,153,51,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(255,153,51,0.3);"><i class="fa-solid fa-bolt" style="color:#ff9933;font-size:18px;"></i></div>
                         <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#ff9933;margin-bottom:8px;">उपाय और शॉर्ट्स</div>
                         <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#ff9933;margin-bottom:8px;letter-spacing:1px;">REMEDIES & SHORTS</div>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">दैनिक जीवन के उपाय, मंत्र और आत्मिक टिप्स।</p>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Daily life remedies, mantras & spiritual tips.</p>
                         <div style="font-family:'Cinzel',serif;font-size:22px;color:#fff;font-weight:700;">700+ <span style="font-size:13px;color:#c8a97a;font-weight:400;">videos</span></div>
                     </div>
- 
-                    <!-- Playlist 4: Gyan Chacha -->
                     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(100,180,255,0.25);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#64b4ff';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(100,180,255,0.25)';this.style.transform='translateY(0)'">
-                        <div style="width:44px;height:44px;background:rgba(100,180,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(100,180,255,0.3);">
-                            <i class="fa-solid fa-book-open" style="color:#64b4ff;font-size:18px;"></i>
-                        </div>
+                        <div style="width:44px;height:44px;background:rgba(100,180,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(100,180,255,0.3);"><i class="fa-solid fa-book-open" style="color:#64b4ff;font-size:18px;"></i></div>
                         <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#64b4ff;margin-bottom:8px;">ज्ञान चाचा</div>
                         <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#64b4ff;margin-bottom:8px;letter-spacing:1px;">GYAN CHACHA</div>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">आध्यात्मिक ज्ञान, शास्त्र कथाएं और पौराणिक रहस्य।</p>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Spiritual knowledge, scripture stories & mythological secrets.</p>
                         <a href="https://www.youtube.com/playlist?list=PLMZ-_3jjC4_VlNQn9h0hEM69q5UstU0J_" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:#64b4ff;font-size:14px;text-decoration:none;font-family:'Cinzel',serif;letter-spacing:1px;border:1px solid rgba(100,180,255,0.3);padding:8px 16px;border-radius:20px;transition:0.3s;" onmouseover="this.style.background='rgba(100,180,255,0.15)'" onmouseout="this.style.background='transparent'">
-                            <i class="fa-brands fa-youtube"></i>
-                            <span class="hi">प्लेलिस्ट देखें</span><span class="en">View Playlist</span>
+                            <i class="fa-brands fa-youtube"></i><span class="hi">प्लेलिस्ट देखें</span><span class="en">View Playlist</span>
                         </a>
                     </div>
- 
-                    <!-- Playlist 5: Widow -->
                     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(180,120,255,0.25);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#b478ff';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(180,120,255,0.25)';this.style.transform='translateY(0)'">
-                        <div style="width:44px;height:44px;background:rgba(180,120,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(180,120,255,0.3);">
-                            <i class="fa-solid fa-graduation-cap" style="color:#b478ff;font-size:18px;"></i>
-                        </div>
-                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#b478ff;margin-bottom:8px;">विधवा प्लेलिस्टट</div>
-                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#b478ff;margin-bottom:8px;letter-spacing:1px;">Widow Playlist</div>
+                        <div style="width:44px;height:44px;background:rgba(180,120,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(180,120,255,0.3);"><i class="fa-solid fa-graduation-cap" style="color:#b478ff;font-size:18px;"></i></div>
+                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#b478ff;margin-bottom:8px;">विधवा प्लेलिस्ट</div>
+                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#b478ff;margin-bottom:8px;letter-spacing:1px;">WIDOW PLAYLIST</div>
                         <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">जीवन की चुनौतियों में आत्मिक संबल और धैर्य।</p>
-                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Spiritual strength and patience in the face of life's challenges.</p>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Spiritual strength and patience in life's challenges.</p>
                         <a href="https://www.youtube.com/playlist?list=PLMZ-_3jjC4_UIEJSkNRnMHgvuMEylhrdM" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:#b478ff;font-size:14px;text-decoration:none;font-family:'Cinzel',serif;letter-spacing:1px;border:1px solid rgba(180,120,255,0.3);padding:8px 16px;border-radius:20px;transition:0.3s;" onmouseover="this.style.background='rgba(180,120,255,0.15)'" onmouseout="this.style.background='transparent'">
-                            <i class="fa-brands fa-youtube"></i>
-                            <span class="hi">प्लेलिस्ट देखें</span><span class="en">View Playlist</span>
+                            <i class="fa-brands fa-youtube"></i><span class="hi">प्लेलिस्ट देखें</span><span class="en">View Playlist</span>
                         </a>
                     </div>
- 
-                    <!-- Playlist 6: Add More placeholder -->
                     <div style="background:rgba(255,255,255,0.02);border:2px dashed rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:200px;">
                         <i class="fa-solid fa-circle-plus" style="font-size:36px;color:rgba(255,153,51,0.3);margin-bottom:14px;"></i>
                         <div class="hi" style="font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:rgba(255,153,51,0.4);line-height:1.6;">और प्लेलिस्ट<br>जोड़ें</div>
@@ -692,54 +657,36 @@
                     </div>
                 </div>
             </div>
- 
-            <!-- ── ROW 3: Total impact summary bar ── -->
+
+            <!-- STATS BAR -->
             <div style="background:linear-gradient(135deg,rgba(230,0,0,0.08),rgba(255,153,51,0.06),rgba(13,7,2,0.9));border:1px solid rgba(255,153,51,0.2);border-radius:20px;padding:32px 40px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;">
-                <div style="text-align:center;">
-                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1,300+</div>
-                    <div style="font-size:15px;color:#c8a97a;" class="hi">कुल वीडियोज़</div><div style="font-size:15px;color:#c8a97a;" class="en">Total Videos</div>
-                </div>
+                <div style="text-align:center;"><div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1,300+</div><div style="font-size:15px;color:#c8a97a;" class="hi">कुल वीडियोज़</div><div style="font-size:15px;color:#c8a97a;" class="en">Total Videos</div></div>
                 <div style="width:1px;height:60px;background:rgba(255,153,51,0.2);"></div>
-                <div style="text-align:center;">
-                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">700+</div>
-                    <div style="font-size:15px;color:#c8a97a;" class="hi">शॉर्ट्स</div><div style="font-size:15px;color:#c8a97a;" class="en">Shorts</div>
-                </div>
+                <div style="text-align:center;"><div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">700+</div><div style="font-size:15px;color:#c8a97a;" class="hi">शॉर्ट्स</div><div style="font-size:15px;color:#c8a97a;" class="en">Shorts</div></div>
                 <div style="width:1px;height:60px;background:rgba(255,153,51,0.2);"></div>
-                <div style="text-align:center;">
-                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">139+</div>
-                    <div style="font-size:15px;color:#c8a97a;" class="hi">मेरा अनुभव</div><div style="font-size:15px;color:#c8a97a;" class="en">Mera Anubhav</div>
-                </div>
+                <div style="text-align:center;"><div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">139+</div><div style="font-size:15px;color:#c8a97a;" class="hi">मेरा अनुभव</div><div style="font-size:15px;color:#c8a97a;" class="en">Mera Anubhav</div></div>
                 <div style="width:1px;height:60px;background:rgba(255,153,51,0.2);"></div>
-                <div style="text-align:center;">
-                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;color:#25D366;">लाखों</div>
-                    <div style="font-size:15px;color:#c8a97a;" class="hi">भक्तों का विश्वास</div><div style="font-size:15px;color:#c8a97a;" class="en">Devotees Trust</div>
-                </div>
+                <div style="text-align:center;"><div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;color:#25D366;">लाखों</div><div style="font-size:15px;color:#c8a97a;" class="hi">भक्तों का विश्वास</div><div style="font-size:15px;color:#c8a97a;" class="en">Devotees Trust</div></div>
             </div>
         </div>
     </section>
- 
-    <!-- ══════════════ GALLERY ══════════════ -->
+
+    <!-- GALLERY -->
     <section class="bg-lotus-pattern" style="background-color:#100806;">
         <div class="container">
             <h2 class="section-title hi" style="text-align:center; border:none; margin-bottom:40px;">गैलरी</h2>
             <h2 class="section-title en" style="text-align:center; border:none; margin-bottom:40px;">Gallery</h2>
             <div class="gallery-grid">
-                <div class="image-wrapper" style="height:420px;">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13300501181839083282" alt="Gallery 1">
-                </div>
+                <div class="image-wrapper" style="height:420px;"><img src="http://googleusercontent.com/image_collection/image_retrieval/13300501181839083282" alt="Gallery 1"></div>
                 <div class="gallery-col">
-                    <div class="image-wrapper" style="height:200px;">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/1793965280267522216" alt="Gallery 2">
-                    </div>
-                    <div class="image-wrapper" style="height:200px;">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/6830868313729270465" alt="Gallery 3">
-                    </div>
+                    <div class="image-wrapper" style="height:200px;"><img src="http://googleusercontent.com/image_collection/image_retrieval/1793965280267522216" alt="Gallery 2"></div>
+                    <div class="image-wrapper" style="height:200px;"><img src="http://googleusercontent.com/image_collection/image_retrieval/6830868313729270465" alt="Gallery 3"></div>
                 </div>
             </div>
         </div>
     </section>
- 
-    <!-- ══════════════ TIMINGS ══════════════ -->
+
+    <!-- ══════════════ TIMINGS (UPDATED: 8 AM – 5 PM) ══════════════ -->
     <section>
         <div class="container">
             <h2 class="section-title hi">दर्शन एवं सेवा समय</h2>
@@ -748,50 +695,138 @@
                 <thead>
                     <tr>
                         <th><span class="hi">दिन</span><span class="en">Day</span></th>
-                        <th><span class="hi">प्रातः काल</span><span class="en">Morning</span></th>
-                        <th><span class="hi">संध्या काल</span><span class="en">Evening</span></th>
+                        <th><span class="hi">समय</span><span class="en">Timings</span></th>
+                        <th><span class="hi">स्थिति</span><span class="en">Status</span></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="hi">रविवार (महासत्संग)</span><span class="en">Sunday (Satsang)</span></td><td colspan="2" style="color:#7fffb0; font-weight:600;">10:00 AM – 5:00 PM &nbsp;<span style="font-size:13px;opacity:0.6;" class="hi">✅ खुला</span><span style="font-size:13px;opacity:0.6;" class="en">✅ Open</span></td></tr>
-                    <tr><td><span class="hi">मंगलवार</span><span class="en">Tuesday</span></td><td colspan="2" style="color:#7fffb0; font-weight:600;">10:00 AM – 5:00 PM</td></tr>
-                    <tr><td><span class="hi">बुधवार</span><span class="en">Wednesday</span></td><td colspan="2" style="color:#7fffb0; font-weight:600;">10:00 AM – 5:00 PM</td></tr>
-                    <tr><td><span class="hi">गुरुवार</span><span class="en">Thursday</span></td><td colspan="2" style="color:#7fffb0; font-weight:600;">10:00 AM – 5:00 PM</td></tr>
-                    <tr><td><span class="hi">शुक्रवार</span><span class="en">Friday</span></td><td colspan="2" style="color:#7fffb0; font-weight:600;">10:00 AM – 5:00 PM</td></tr>
-                    <tr><td><span class="hi">शनिवार</span><span class="en">Saturday</span></td><td colspan="2" style="color:#7fffb0; font-weight:600;">10:00 AM – 5:00 PM</td></tr>
-                    <tr style="color:#ff6b6b; font-weight:700;"><td><span class="hi">सोमवार</span><span class="en">Monday</span></td><td colspan="2" style="text-align:center; background:rgba(255,80,80,0.08); border:1px solid rgba(255,80,80,0.2);">🔴 &nbsp;<span class="hi">— बंद / पूर्ण विश्राम —</span><span class="en">— Closed / Rest Day —</span></td></tr>
+                    <tr>
+                        <td><strong><span class="hi">रविवार</span><span class="en">Sunday</span></strong><br><small style="color:#ff9933;font-size:13px;" class="hi">महासत्संग दिवस</small><small style="color:#ff9933;font-size:13px;" class="en">Grand Satsang Day</small></td>
+                        <td style="color:#7fffb0;font-weight:600;font-size:20px;">08:00 AM – 05:00 PM</td>
+                        <td><span style="color:#7fffb0;">✅</span> <span class="hi">खुला</span><span class="en">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="hi">मंगलवार</span><span class="en">Tuesday</span></td>
+                        <td style="color:#7fffb0;font-weight:600;font-size:20px;">08:00 AM – 05:00 PM</td>
+                        <td><span style="color:#7fffb0;">✅</span> <span class="hi">खुला</span><span class="en">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="hi">बुधवार</span><span class="en">Wednesday</span></td>
+                        <td style="color:#7fffb0;font-weight:600;font-size:20px;">08:00 AM – 05:00 PM</td>
+                        <td><span style="color:#7fffb0;">✅</span> <span class="hi">खुला</span><span class="en">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="hi">गुरुवार</span><span class="en">Thursday</span></td>
+                        <td style="color:#7fffb0;font-weight:600;font-size:20px;">08:00 AM – 05:00 PM</td>
+                        <td><span style="color:#7fffb0;">✅</span> <span class="hi">खुला</span><span class="en">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="hi">शुक्रवार</span><span class="en">Friday</span></td>
+                        <td style="color:#7fffb0;font-weight:600;font-size:20px;">08:00 AM – 05:00 PM</td>
+                        <td><span style="color:#7fffb0;">✅</span> <span class="hi">खुला</span><span class="en">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="hi">शनिवार</span><span class="en">Saturday</span></td>
+                        <td style="color:#7fffb0;font-weight:600;font-size:20px;">08:00 AM – 05:00 PM</td>
+                        <td><span style="color:#7fffb0;">✅</span> <span class="hi">खुला</span><span class="en">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color:#ff6b6b;font-weight:700;"><span class="hi">सोमवार</span><span class="en">Monday</span></td>
+                        <td colspan="2" style="text-align:center;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.2);color:#ff6b6b;font-weight:700;">🔴 &nbsp;<span class="hi">— बंद / पूर्ण विश्राम —</span><span class="en">— Closed / Rest Day —</span></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </section>
- 
-    <!-- ══════════════ BOOKING ══════════════ -->
-    <section style="background: rgba(255,255,255,0.02);">
+
+    <!-- ══════════════ APPOINTMENT BOOKING (FULLY REBUILT) ══════════════ -->
+    <section style="background: rgba(255,255,255,0.02);" id="booking">
         <div class="container">
-            <h2 class="section-title hi">अपॉइंटमेंट बुकिंग</h2>
-            <h2 class="section-title en">Appointment Booking</h2>
-            <div class="tiled-content" style="margin-bottom:30px;">
-                <div class="tile">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <h3 class="hi">१. स्लॉट चुनें</h3><h3 class="en">1. Select Slot</h3>
-                    <p class="hi">दर्शन हेतु कम से कम ७ दिन पहले अपना समय सुरक्षित करें।</p>
-                    <p class="en">Secure your time at least 7 days in advance for Darshan.</p>
-                </div>
-                <div class="tile">
-                    <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
-                    <h3 class="hi">२. WhatsApp अलर्ट</h3><h3 class="en">2. WhatsApp Alert</h3>
-                    <p class="hi">बुकिंग पूर्ण होते ही तुरंत WhatsApp पर पुष्टि प्राप्त करें।</p>
-                    <p class="en">Get instant confirmation on WhatsApp once booked.</p>
+            <div style="text-align:center; margin-bottom:50px;">
+                <i class="fa-solid fa-calendar-check" style="font-size:52px; color:var(--saffron); filter:drop-shadow(0 0 16px rgba(255,153,51,0.4)); display:block; margin-bottom:16px;"></i>
+                <h2 class="section-title hi" style="border:none; text-align:center;">अपॉइंटमेंट बुकिंग</h2>
+                <h2 class="section-title en" style="border:none; text-align:center;">Appointment Booking</h2>
+                <p class="hi" style="color:var(--text-muted); font-size:18px;">व्यक्तिगत दर्शन के लिए पहले से अपॉइंटमेंट लेना अनिवार्य है।</p>
+                <p class="en" style="color:var(--text-muted); font-size:18px;">Prior appointment is mandatory for personal Darshan visit.</p>
+            </div>
+
+            <!-- TIMELINE: How many days in advance -->
+            <div style="margin-bottom:36px;">
+                <h3 style="font-family:'Yatra One',cursive;font-size:24px;color:var(--saffron);margin-bottom:16px;text-align:center;" class="hi">⏰ कितने दिन पहले बुक करें?</h3>
+                <h3 style="font-family:'Cinzel',serif;font-size:20px;color:var(--saffron);margin-bottom:16px;text-align:center;letter-spacing:1px;" class="en">⏰ HOW FAR IN ADVANCE?</h3>
+                <div class="appt-timeline">
+                    <div class="appt-step">
+                        <div class="appt-step-num">2</div>
+                        <div class="appt-step-label hi"><strong style="color:var(--text-light);">दिन पहले</strong><br>अनुशंसित समय<br><span style="color:#7fffb0;font-size:12px;">✅ Best Choice</span></div>
+                        <div class="appt-step-label en"><strong style="color:var(--text-light);">Days Before</strong><br>Recommended<br><span style="color:#7fffb0;font-size:12px;">✅ Best Choice</span></div>
+                    </div>
+                    <div class="appt-step">
+                        <div class="appt-step-num">1</div>
+                        <div class="appt-step-label hi"><strong style="color:var(--text-light);">दिन पहले</strong><br>न्यूनतम समय<br><span style="color:#ffd700;font-size:12px;">⚠️ Subject to Slot</span></div>
+                        <div class="appt-step-label en"><strong style="color:var(--text-light);">Day Before</strong><br>Minimum Notice<br><span style="color:#ffd700;font-size:12px;">⚠️ Subject to Slot</span></div>
+                    </div>
+                    <div class="appt-step">
+                        <div class="appt-step-num" style="color:#ff6b6b;">0</div>
+                        <div class="appt-step-label hi"><strong style="color:#ff6b6b;">दिन (वॉक-इन)</strong><br>अनुमति नहीं<br><span style="color:#ff6b6b;font-size:12px;">❌ Not Allowed</span></div>
+                        <div class="appt-step-label en"><strong style="color:#ff6b6b;">Day (Walk-in)</strong><br>Not Permitted<br><span style="color:#ff6b6b;font-size:12px;">❌ Not Allowed</span></div>
+                    </div>
                 </div>
             </div>
-            <div style="background:linear-gradient(135deg,rgba(255,153,51,0.12),rgba(212,137,10,0.05)); border:2px dashed rgba(255,153,51,0.5); padding:22px; border-radius:15px; text-align:center;">
-                <p class="hi" style="font-size:19px; font-weight:600; color:var(--saffron);"><i class="fa-solid fa-triangle-exclamation"></i> ध्यान दें: बिना पूर्व अपॉइंटमेंट के व्यक्तिगत परामर्श में प्रवेश वर्जित है।</p>
-                <p class="en" style="font-size:19px; font-weight:600; color:var(--saffron);"><i class="fa-solid fa-triangle-exclamation"></i> Note: Entry to personal consultation is prohibited without prior appointment.</p>
+
+            <!-- TWO BOOKING METHODS -->
+            <div class="appt-methods">
+
+                <!-- WhatsApp Method -->
+                <div class="appt-card wa-card">
+                    <div class="appt-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3 class="hi">WhatsApp से बुक करें</h3>
+                    <h3 class="en">Book via WhatsApp</h3>
+                    <p class="hi" style="font-size:16px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">नीचे बटन दबाएं — सीधे WhatsApp पर जाएंगे जहाँ आपका नाम, दिनांक और समस्या का संदेश पहले से तैयार होगा।</p>
+                    <p class="en" style="font-size:16px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">Tap the button below — opens WhatsApp directly with a pre-written message including your name, date & purpose.</p>
+                    <a href="https://wa.me/917080317245?text=नमस्ते%20गुरु%20पिता%20जी%20🙏%0A%0Aमैं%20आनंद%20शक्ति%20में%20व्यक्तिगत%20दर्शन%20हेतु%20अपॉइंटमेंट%20लेना%20चाहता%2Fचाहती%20हूँ।%0A%0A👤%20नाम%3A%20%0A📅%20पसंदीदा%20दिनांक%3A%20%0A⏰%20पसंदीदा%20समय%3A%20%0A📍%20आने%20का%20उद्देश्य%3A%20%0A%0AकृपयाConfirm%20करें।%20🙏" target="_blank" class="appt-cta-btn wa-btn">
+                        <i class="fa-brands fa-whatsapp" style="font-size:22px;"></i>
+                        <span class="hi">WhatsApp पर अपॉइंटमेंट लें</span>
+                        <span class="en">Book via WhatsApp</span>
+                    </a>
+                    <p style="font-size:13px;color:rgba(37,211,102,0.6);margin-top:12px;text-align:center;">+91 70803 17245</p>
+                </div>
+
+                <!-- Call Method -->
+                <div class="appt-card call-card">
+                    <div class="appt-card-icon"><i class="fa-solid fa-phone"></i></div>
+                    <h3 class="hi">कॉल करके बुक करें</h3>
+                    <h3 class="en">Book via Phone Call</h3>
+                    <p class="hi" style="font-size:16px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">सेवा समय में सीधे कॉल करें और अपना दर्शन स्लॉट सुरक्षित करें। सोमवार को केंद्र बंद रहता है।</p>
+                    <p class="en" style="font-size:16px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">Call directly during service hours to secure your Darshan slot. Center is closed on Mondays.</p>
+                    <div style="background:rgba(255,153,51,0.06);border:1px solid rgba(255,153,51,0.2);border-radius:12px;padding:14px;margin-bottom:20px;text-align:center;">
+                        <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;" class="hi">कॉल का सही समय</div>
+                        <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;" class="en">Best Time to Call</div>
+                        <div style="font-family:'Cinzel',serif;font-size:18px;color:var(--saffron);font-weight:700;">08:00 AM – 05:00 PM</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" class="hi">(सोमवार छोड़कर)</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" class="en">(Except Monday)</div>
+                    </div>
+                    <a href="tel:+917080317245" class="appt-cta-btn call-btn">
+                        <i class="fa-solid fa-phone" style="font-size:20px;"></i>
+                        <span class="hi">+91 70803 17245 पर कॉल करें</span>
+                        <span class="en">Call +91 70803 17245</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- NOTICE BOX -->
+            <div class="appt-notice">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                    <p class="hi" style="font-size:18px;font-weight:600;color:var(--saffron);margin-bottom:8px;"><i class="fa-solid fa-circle-info"></i> महत्वपूर्ण नियम</p>
+                    <p class="en" style="font-size:18px;font-weight:600;color:var(--saffron);margin-bottom:8px;"><i class="fa-solid fa-circle-info"></i> Important Rules</p>
+                    <p class="hi" style="font-size:16px;color:var(--text-light);">बिना पूर्व अपॉइंटमेंट के व्यक्तिगत परामर्श में प्रवेश वर्जित है। कम से कम <strong style="color:var(--saffron);">२ दिन पहले</strong> बुकिंग अनिवार्य है। अपॉइंटमेंट <strong style="color:var(--saffron);">WhatsApp या कॉल</strong> दोनों माध्यमों से की जा सकती है।</p>
+                    <p class="en" style="font-size:16px;color:var(--text-light);">Walk-in entry for personal consultation is strictly prohibited. Booking at least <strong style="color:var(--saffron);">2 days in advance</strong> is mandatory. Appointments can be made via <strong style="color:var(--saffron);">WhatsApp or Phone Call</strong>.</p>
+                </div>
             </div>
         </div>
     </section>
- 
-    <!-- ══════════════ CONTACT / FOOTER ══════════════ -->
+
+    <!-- ══════════════ CONTACT / FOOTER (WITH FACEBOOK) ══════════════ -->
     <section class="bg-lotus-pattern" style="background-color:#0d0702; flex-direction:column; text-align:center;">
         <div class="container">
             <h2 class="section-title hi" style="border:none; text-align:center;">संपर्क स्थापित करें</h2>
@@ -799,14 +834,51 @@
             <p style="margin-bottom:14px;"><strong style="color:var(--saffron);"><span class="hi">पता:</span><span class="en">Address:</span></strong> &nbsp;57, Chandranagar, Lalbangla, Kanpur, Uttar Pradesh — 208007</p>
             <p style="margin-bottom:14px;"><strong style="color:var(--saffron);"><span class="hi">हेल्पलाइन:</span><span class="en">Helpline:</span></strong> &nbsp;<a href="tel:+917080317245" style="color:var(--text-light); text-decoration:none;">+91 70803 17245</a></p>
             <p style="margin-bottom:40px;"><strong style="color:var(--saffron);">Email:</strong> &nbsp;<a href="mailto:anandshakti2008@gmail.com" style="color:var(--text-light); text-decoration:none;">anandshakti2008@gmail.com</a></p>
-            <div style="display:flex; gap:30px; justify-content:center; margin-bottom:70px;">
-                <a href="https://youtube.com/@anandshakti" target="_blank" class="social-link"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://wa.me/917080317245" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+
+            <!-- SOCIAL LINKS: YouTube, WhatsApp, Instagram, Facebook -->
+            <div style="display:flex; gap:30px; justify-content:center; margin-bottom:24px; flex-wrap:wrap;">
+                <a href="https://youtube.com/@anandshakti" target="_blank" class="social-link" title="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/917080317245" target="_blank" class="social-link" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" class="social-link" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <!-- FACEBOOK — अपना Facebook Page / ID का link यहाँ डालें -->
+                <a href="https://www.facebook.com/anandshakti" target="_blank" class="social-link fb" title="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
             </div>
- 
+
+            <!-- SOCIAL LABELS -->
+            <div style="display:flex; gap:30px; justify-content:center; margin-bottom:60px; flex-wrap:wrap;">
+                <div style="text-align:center; width:60px;">
+                    <a href="https://youtube.com/@anandshakti" target="_blank" style="font-size:12px;color:var(--text-muted);text-decoration:none;">YouTube</a>
+                </div>
+                <div style="text-align:center; width:60px;">
+                    <a href="https://wa.me/917080317245" target="_blank" style="font-size:12px;color:var(--text-muted);text-decoration:none;">WhatsApp</a>
+                </div>
+                <div style="text-align:center; width:60px;">
+                    <a href="#" target="_blank" style="font-size:12px;color:var(--text-muted);text-decoration:none;">Instagram</a>
+                </div>
+                <div style="text-align:center; width:60px;">
+                    <a href="https://www.facebook.com/anandshakti" target="_blank" style="font-size:12px;color:var(--text-muted);text-decoration:none;">Facebook</a>
+                </div>
+            </div>
+
+            <!-- QUICK BOOKING BUTTON IN FOOTER -->
+            <div style="margin-bottom:60px;">
+                <a href="https://wa.me/917080317245?text=नमस्ते%20गुरु%20पिता%20जी%20🙏%0A%0Aमैं%20आनंद%20शक्ति%20में%20व्यक्तिगत%20दर्शन%20हेतु%20अपॉइंटमेंट%20लेना%20चाहता%2Fचाहती%20हूँ।%0A%0A👤%20नाम%3A%20%0A📅%20पसंदीदा%20दिनांक%3A%20%0A⏰%20पसंदीदा%20समय%3A%20%0A📍%20आने%20का%20उद्देश्य%3A%20%0A%0AकृपयाConfirm%20करें।%20🙏" target="_blank" style="display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:16px 36px;border-radius:40px;font-family:'Cinzel',serif;font-size:16px;font-weight:700;letter-spacing:1px;text-decoration:none;box-shadow:0 0 30px rgba(37,211,102,0.4);transition:0.3s;" onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 0 45px rgba(37,211,102,0.6)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 30px rgba(37,211,102,0.4)'">
+                    <i class="fa-brands fa-whatsapp" style="font-size:24px;"></i>
+                    <span class="hi">अभी WhatsApp पर अपॉइंटमेंट बुक करें</span>
+                    <span class="en">Book Appointment on WhatsApp Now</span>
+                </a>
+            </div>
+
             <div class="ornament"><div class="ornament-line"></div><span class="ornament-symbol" style="font-size:40px;">ॐ</span><div class="ornament-line rev"></div></div>
- 
+
             <div class="footer-tagline hi" style="margin:30px 0 10px;">शांति और आनंद</div>
             <div class="footer-tagline en" style="margin:30px 0 10px;">Peace & Joy</div>
             <p class="hi" style="font-size:22px; color:var(--text-muted); margin-bottom:60px; font-style:normal;">"गुरु पिता और गुरु माता का आशीर्वाद सदा आपके साथ रहे।"</p>
@@ -814,7 +886,7 @@
             <p style="opacity:0.45; font-size:15px; font-family:'Cinzel',serif;">© 2026 &nbsp;<span class="hi">आनंद शक्ति — सर्वाधिकार सुरक्षित</span><span class="en">Anand Shakti — All Rights Reserved</span></p>
         </div>
     </section>
- 
+
     <script>
         function toggleLanguage() {
             const body = document.body;
@@ -822,39 +894,27 @@
             body.classList.toggle('english-mode');
             btn.innerText = body.classList.contains('english-mode') ? 'हिंदी में पढ़ें' : 'Read in English';
         }
- 
-        /* ══ SPIRITUAL BACKGROUND CANVAS ANIMATION ══ */
+
+        /* SPIRITUAL BACKGROUND CANVAS */
         (function() {
             const canvas = document.getElementById('spiritual-bg');
             const ctx = canvas.getContext('2d');
             let W, H, particles = [], mandalas = [];
- 
-            function resize() {
-                W = canvas.width  = window.innerWidth;
-                H = canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
- 
-            /* Particle class */
+            function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize); resize();
+
             class Particle {
                 constructor() { this.reset(); }
                 reset() {
-                    this.x = Math.random() * W;
-                    this.y = H + 10;
+                    this.x = Math.random() * W; this.y = H + 10;
                     this.size = Math.random() * 2.5 + 0.5;
                     this.speedY = Math.random() * 0.6 + 0.2;
                     this.speedX = (Math.random() - 0.5) * 0.3;
-                    this.alpha = 0;
-                    this.maxAlpha = Math.random() * 0.5 + 0.15;
-                    this.life = 0;
-                    this.maxLife = Math.random() * 400 + 200;
+                    this.alpha = 0; this.maxAlpha = Math.random() * 0.5 + 0.15;
+                    this.life = 0; this.maxLife = Math.random() * 400 + 200;
                 }
                 update() {
-                    this.life++;
-                    this.y -= this.speedY;
-                    this.x += this.speedX;
-                    // Fade in / fade out
+                    this.life++; this.y -= this.speedY; this.x += this.speedX;
                     if (this.life < 40) this.alpha = (this.life / 40) * this.maxAlpha;
                     else if (this.life > this.maxLife - 40) this.alpha = ((this.maxLife - this.life) / 40) * this.maxAlpha;
                     else this.alpha = this.maxAlpha;
@@ -865,14 +925,11 @@
                     grd.addColorStop(0, `rgba(255,153,51,${this.alpha})`);
                     grd.addColorStop(0.5, `rgba(212,137,10,${this.alpha * 0.5})`);
                     grd.addColorStop(1, 'rgba(0,0,0,0)');
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
-                    ctx.fillStyle = grd;
-                    ctx.fill();
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
+                    ctx.fillStyle = grd; ctx.fill();
                 }
             }
- 
-            /* Mandala class - faint rotating geometric shapes */
+
             class Mandala {
                 constructor(x, y, r, speed, petals) {
                     this.x = x; this.y = y; this.r = r;
@@ -881,83 +938,46 @@
                 }
                 update() { this.angle += this.speed; }
                 draw() {
-                    ctx.save();
-                    ctx.translate(this.x, this.y);
-                    ctx.rotate(this.angle);
-                    ctx.strokeStyle = `rgba(255,153,51,${this.alpha})`;
-                    ctx.lineWidth = 0.5;
- 
-                    // Outer circle
+                    ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.angle);
+                    ctx.strokeStyle = `rgba(255,153,51,${this.alpha})`; ctx.lineWidth = 0.5;
                     ctx.beginPath(); ctx.arc(0, 0, this.r, 0, Math.PI * 2); ctx.stroke();
                     ctx.beginPath(); ctx.arc(0, 0, this.r * 0.65, 0, Math.PI * 2); ctx.stroke();
- 
-                    // Spokes
                     for (let i = 0; i < this.petals; i++) {
                         const a = (i / this.petals) * Math.PI * 2;
-                        ctx.beginPath();
-                        ctx.moveTo(0, 0);
-                        ctx.lineTo(Math.cos(a) * this.r, Math.sin(a) * this.r);
-                        ctx.stroke();
- 
-                        // Petal arcs
-                        ctx.beginPath();
-                        ctx.ellipse(
-                            Math.cos(a) * this.r * 0.5,
-                            Math.sin(a) * this.r * 0.5,
-                            this.r * 0.22, this.r * 0.1, a,
-                            0, Math.PI * 2
-                        );
-                        ctx.stroke();
+                        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a) * this.r, Math.sin(a) * this.r); ctx.stroke();
+                        ctx.beginPath(); ctx.ellipse(Math.cos(a) * this.r * 0.5, Math.sin(a) * this.r * 0.5, this.r * 0.22, this.r * 0.1, a, 0, Math.PI * 2); ctx.stroke();
                     }
                     ctx.restore();
                 }
             }
- 
-            // Init particles
-            for (let i = 0; i < 60; i++) {
-                const p = new Particle();
-                p.y = Math.random() * H; // spread on load
-                p.life = Math.floor(Math.random() * p.maxLife);
-                particles.push(p);
-            }
- 
-            // Init mandalas
+
+            for (let i = 0; i < 60; i++) { const p = new Particle(); p.y = Math.random() * H; p.life = Math.floor(Math.random() * p.maxLife); particles.push(p); }
             mandalas = [
-                new Mandala(W * 0.5,  H * 0.5,  220, 0.0003,  8),
-                new Mandala(W * 0.85, H * 0.15, 120, -0.0004, 6),
-                new Mandala(W * 0.1,  H * 0.8,  90,  0.0005,  6),
-                new Mandala(W * 0.5,  H * 0.5,  350, -0.0002, 12),
-                new Mandala(W * 0.3,  H * 0.3,  70,  0.0007,  8),
+                new Mandala(W*0.5, H*0.5, 220, 0.0003, 8),
+                new Mandala(W*0.85, H*0.15, 120, -0.0004, 6),
+                new Mandala(W*0.1, H*0.8, 90, 0.0005, 6),
+                new Mandala(W*0.5, H*0.5, 350, -0.0002, 12),
+                new Mandala(W*0.3, H*0.3, 70, 0.0007, 8),
             ];
- 
+
             function loop() {
                 ctx.clearRect(0, 0, W, H);
- 
-                // Subtle dark gradient base
-                const bg = ctx.createRadialGradient(W/2, H*0.4, 0, W/2, H*0.4, W * 0.7);
-                bg.addColorStop(0, 'rgba(30,15,6,0.15)');
-                bg.addColorStop(1, 'rgba(0,0,0,0)');
-                ctx.fillStyle = bg;
-                ctx.fillRect(0, 0, W, H);
- 
+                const bg = ctx.createRadialGradient(W/2, H*0.4, 0, W/2, H*0.4, W*0.7);
+                bg.addColorStop(0, 'rgba(30,15,6,0.15)'); bg.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
                 mandalas.forEach(m => { m.update(); m.draw(); });
                 particles.forEach(p => { p.update(); p.draw(); });
- 
                 requestAnimationFrame(loop);
             }
- 
-            // Re-position mandalas on resize
             window.addEventListener('resize', () => {
-                mandalas[0].x = W*0.5;  mandalas[0].y = H*0.5;
+                mandalas[0].x = W*0.5; mandalas[0].y = H*0.5;
                 mandalas[1].x = W*0.85; mandalas[1].y = H*0.15;
-                mandalas[2].x = W*0.1;  mandalas[2].y = H*0.8;
-                mandalas[3].x = W*0.5;  mandalas[3].y = H*0.5;
-                mandalas[4].x = W*0.3;  mandalas[4].y = H*0.3;
+                mandalas[2].x = W*0.1; mandalas[2].y = H*0.8;
+                mandalas[3].x = W*0.5; mandalas[3].y = H*0.5;
+                mandalas[4].x = W*0.3; mandalas[4].y = H*0.3;
             });
- 
             loop();
         })();
     </script>
 </body>
 </html>
- 
