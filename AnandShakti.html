@@ -1,4 +1,61 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi and English Font Styling</title>
+    
+    <!-- Google Fonts से Roboto (English के लिए) और Noto Sans Devanagari (Hindi के लिए) को लिंक किया गया है -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* डिफ़ॉल्ट फॉन्ट (अंग्रेजी के लिए) */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+
+        /* हिंदी टेक्स्ट के लिए विशेष क्लास और lang एट्रिब्यूट */
+        :lang(hi), .hindi-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 1.1em; /* हिंदी को थोड़ा बड़ा किया गया है ताकि पढ़ने में आसानी हो */
+            color: #1a1a1a;
+        }
+
+        .content-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <!-- अंग्रेजी का टेक्स्ट -->
+        <h2>Welcome to the Font Example</h2>
+        <p>This paragraph is written in English. It uses the <strong>Roboto</strong> font, which is a great standard font for web pages.</p>
+
+        <hr>
+
+        <!-- हिंदी का टेक्स्ट (lang="hi" या class="hindi-text" का इस्तेमाल करें) -->
+        <h2 lang="hi" class="hindi-text">फॉन्ट उदाहरण में आपका स्वागत है</h2>
+        <p lang="hi" class="hindi-text">यह पैराग्राफ हिंदी में लिखा गया है। इसमें <strong>Noto Sans Devanagari</strong> फॉन्ट का उपयोग किया गया है, जो हिंदी के अक्षरों को बहुत स्पष्ट और सुंदर बनाता है।</p>
+        
+        <hr>
+
+        <!-- एक ही लाइन में दोनों भाषाएं -->
+        <p>You can also mix both <span lang="hi" class="hindi-text">हिंदी</span> and English in the same sentence easily.</p>
+    </div>
+
+</body>
+</html><!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
