@@ -404,32 +404,23 @@
  
     <!-- NAVBAR -->
     <nav class="top-navbar">
-        <!-- ── CLASSIC SPIRITUAL SVG LOGO ── -->
-        <div style="display:flex; align-items:center; gap:16px;">
-            <svg width="58" height="58" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-                <!-- Outer lotus ring -->
-                <circle cx="29" cy="29" r="27" fill="none" stroke="#ff9933" stroke-width="1" stroke-opacity="0.6"/>
-                <circle cx="29" cy="29" r="22" fill="none" stroke="#d4890a" stroke-width="0.6" stroke-opacity="0.4"/>
-                <!-- 8 petal lotus -->
-                <g fill="none" stroke="#ff9933" stroke-width="0.8" stroke-opacity="0.5">
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" />
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(45 29 29)"/>
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(90 29 29)"/>
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(135 29 29)"/>
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(180 29 29)"/>
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(225 29 29)"/>
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(270 29 29)"/>
-                    <ellipse cx="29" cy="17" rx="3.5" ry="8" transform="rotate(315 29 29)"/>
-                </g>
-                <!-- ॐ center -->
-                <text x="29" y="35" text-anchor="middle" font-size="18" font-family="serif" fill="#ff9933" opacity="0.95">ॐ</text>
-                <!-- Dot top -->
-                <circle cx="29" cy="4" r="2" fill="#ff9933" opacity="0.8"/>
-            </svg>
+        <!-- ── LOGO AREA: अपनी image यहाँ paste करें ── -->
+        <div style="display:flex; align-items:center; gap:14px;">
+ 
+            <!-- 📌 अपना Logo Image यहाँ लगाएं: src="" में अपनी image का path डालें -->
+            <div style="position:relative; width:62px; height:62px; border-radius:50%; border:2px solid rgba(255,153,51,0.5); overflow:hidden; background:radial-gradient(circle, rgba(255,153,51,0.12), rgba(13,7,2,0.9)); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 0 18px rgba(255,153,51,0.2);">
+                <!-- अपनी photo/logo यहाँ paste करें — नीचे src में path डालें -->
+                <img id="navbar-logo-img" src="" alt="" style="width:100%;height:100%;object-fit:cover;display:none;" onerror="this.style.display='none'">
+                <!-- Default OM if no image -->
+                <span id="navbar-logo-om" style="font-size:30px; color:#ff9933; font-family:'Tiro Devanagari Hindi',serif; text-shadow:0 0 15px rgba(255,153,51,0.6); line-height:1;">ॐ</span>
+            </div>
+ 
+            <!-- Logo Text -->
             <div>
-                <div class="logo-text">ĀNAND ŚAKTI</div>
-                <div class="logo-sub hi">आनंद शक्ति | सत्य · सेवा · शांति</div>
-                <div class="logo-sub en">Truth · Service · Peace</div>
+                <div style="font-family:'Yatra One',cursive; font-size:28px; color:#ff9933; line-height:1.1; text-shadow:0 0 20px rgba(255,153,51,0.35); letter-spacing:1px;" class="hi">आनंद शक्ति</div>
+                <div style="font-family:'Cinzel',serif; font-size:18px; color:#ff9933; line-height:1.1; letter-spacing:2px;" class="en">ĀNAND ŚAKTI</div>
+                <div style="font-family:'Tiro Devanagari Hindi',serif; font-size:13px; color:#c8a97a; letter-spacing:2px; margin-top:2px;" class="hi">सत्य · सेवा · शांति</div>
+                <div style="font-family:'Cormorant Garamond',serif; font-size:13px; color:#c8a97a; letter-spacing:2px; margin-top:2px; font-style:italic;" class="en">Truth · Service · Peace</div>
             </div>
         </div>
         <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langBtn">Read in English</button>
@@ -540,72 +531,189 @@
  
     <div class="section-separator"></div>
  
-    <!-- ══════════════ DIGITAL SATSANG ══════════════ -->
-    <section class="bg-mandala">
+    <!-- ══════════════ YOUTUBE CHANNEL HUB ══════════════ -->
+    <section class="bg-mandala" id="youtube-section">
         <div class="container">
-            <h2 class="section-title hi" style="text-align:center; border:none; margin-bottom:50px;">डिजिटल सत्संग केंद्र</h2>
-            <h2 class="section-title en" style="text-align:center; border:none; margin-bottom:50px;">Digital Satsang Center</h2>
-            <div class="tiled-content">
-                <div class="tile">
-                    <i class="fa-brands fa-youtube"></i>
-                    <h3 class="hi">मुख्य YouTube चैनल</h3><h3 class="en">Main YouTube Channel</h3>
-                    <p class="hi">लॉन्ग सत्संग वीडियोज़ और गहन चर्चा।<br><strong style="color:var(--saffron);">रविवार व बुधवार (प्रातः ०८:००)</strong></p>
-                    <p class="en">Long satsang videos and deep discussions.<br><strong style="color:var(--saffron);">Sun & Wed (08:00 AM)</strong></p>
-                </div>
-                <div class="tile">
-                    <i class="fa-solid fa-bolt-lightning"></i>
-                    <h3 class="hi">शॉर्ट्स चैनल</h3><h3 class="en">Shorts Channel</h3>
-                    <p class="hi">दैनिक समस्याओं के अचूक निवारण।<br><strong style="color:var(--saffron);">प्रतिदिन १-२ वीडियोज़</strong></p>
-                    <p class="en">Quick solutions to daily problems.<br><strong style="color:var(--saffron);">1-2 Videos Daily</strong></p>
-                </div>
-                <div class="tile">
-                    <i class="fa-solid fa-hands-praying"></i>
-                    <h3 class="hi">डिजिटल प्रभाव</h3><h3 class="en">Digital Impact</h3>
-                    <p class="hi">विशुद्ध सनातन ज्ञान का आधुनिक माध्यम।<br><strong style="color:var(--saffron);">लाखों लोगों का विश्वास</strong></p>
-                    <p class="en">Modern medium of pure Sanatan knowledge.<br><strong style="color:var(--saffron);">Trusted by Millions</strong></p>
-                </div>
+            <div style="text-align:center; margin-bottom:50px;">
+                <i class="fa-brands fa-youtube" style="font-size:56px; color:#e60000; filter:drop-shadow(0 0 18px rgba(230,0,0,0.5)); margin-bottom:16px; display:block;"></i>
+                <h2 class="section-title hi" style="text-align:center; border:none; font-size:48px;">यूट्यूब चैनल केंद्र</h2>
+                <h2 class="section-title en" style="text-align:center; border:none; font-size:48px;">YouTube Channel Hub</h2>
+                <div class="ornament"><div class="ornament-line"></div><span class="ornament-symbol">✦</span><div class="ornament-line rev"></div></div>
             </div>
-        </div>
-    </section>
  
-    <!-- ══════════════ GROWTH ══════════════ -->
-    <section style="background: rgba(255,255,255,0.015);">
-        <div class="container">
-            <h2 class="section-title hi">ग्रोथ और सोशल इम्पैक्ट</h2>
-            <h2 class="section-title en">Growth & Social Impact</h2>
-            <div class="bar-chart">
-                <div class="bar-container">
-                    <div class="bar-label"><span class="hi">कुल वीडियोज़</span><span class="en">Total Videos</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width:90%;"></div></div>
-                    <div class="bar-value">1,300+</div>
-                </div>
-                <div class="bar-container">
-                    <div class="bar-label"><span class="hi">मेरा अनुभव</span><span class="en">Mera Anubhav</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width:40%;"></div></div>
-                    <div class="bar-value">139+</div>
-                </div>
-                <div class="bar-container">
-                    <div class="bar-label"><span class="hi">शॉर्ट्स वीडियोज़</span><span class="en">Shorts Uploaded</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width:75%;"></div></div>
-                    <div class="bar-value">700+</div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- ── ROW 1: Two main channels ── -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:28px;">
  
-    <!-- ══════════════ MERA ANUBHAV ══════════════ -->
-    <section class="bg-omkara">
-        <div class="container two-column" style="grid-template-columns: 1.2fr 0.8fr;">
-            <div>
-                <h2 class="section-title hi">प्लेलिस्ट: मेरा अनुभव</h2>
-                <h2 class="section-title en">Playlist: Mera Anubhav</h2>
-                <p class="hi">१३९+ वीडियोज़ की यह श्रृंखला अत्यंत लोकप्रिय है। इसमें गुरु पिता ने अपने व्यक्तिगत आध्यात्मिक अनुभवों, साधना के रहस्यों और जीवन बदलने वाले चमत्कारों को बेहद सरल भाषा में साझा किया है।</p>
-                <p class="en">This series of 139+ videos is highly popular. Guru Pita has shared personal spiritual experiences, secrets of sadhana, and life-changing miracles in simple language.</p>
-                <p class="hi" style="margin-top: 22px; color:var(--saffron); font-weight:600;"><i class="fa-solid fa-play" style="margin-right:10px;"></i>यह प्लेलिस्ट हर जिज्ञासु भक्त के लिए मार्गदर्शन का स्रोत है।</p>
-                <p class="en" style="margin-top: 22px; color:var(--saffron); font-weight:600;"><i class="fa-solid fa-play" style="margin-right:10px;"></i>A guiding light for every curious devotee.</p>
+                <!-- Main Long Videos Channel -->
+                <div style="background:linear-gradient(135deg,rgba(230,0,0,0.1),rgba(13,7,2,0.8)); border:1px solid rgba(230,0,0,0.3); border-radius:24px; padding:38px 32px; position:relative; overflow:hidden;">
+                    <div style="position:absolute;top:-20px;right:-20px;font-size:140px;color:rgba(230,0,0,0.05); font-family:sans-serif; line-height:1; pointer-events:none;">▶</div>
+                    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+                        <div style="width:52px;height:52px;background:#e60000;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 0 20px rgba(230,0,0,0.4);">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <div>
+                            <div class="hi" style="font-family:'Yatra One',cursive;font-size:22px;color:#ff9933;">मुख्य चैनल</div>
+                            <div class="en" style="font-family:'Cinzel',serif;font-size:18px;color:#ff9933;letter-spacing:1px;">MAIN CHANNEL</div>
+                            <div style="font-size:13px;color:#c8a97a;margin-top:2px;">Long Satsang Videos</div>
+                        </div>
+                    </div>
+                    <p class="hi" style="font-size:18px;line-height:1.7;margin-bottom:22px;">गहन सत्संग, आत्मिक प्रवचन और जीवन मार्गदर्शन के लंबे वीडियोज़।<br><strong style="color:#ff9933;">हर रविवार व बुधवार — प्रातः ०८:००</strong></p>
+                    <p class="en" style="font-size:18px;line-height:1.7;margin-bottom:22px;">Deep satsang discourses, spiritual talks & life guidance in full-length videos.<br><strong style="color:#ff9933;">Every Sunday & Wednesday — 08:00 AM</strong></p>
+                    <!-- Stats row -->
+                    <div style="display:flex;gap:16px;margin-bottom:24px;">
+                        <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(230,0,0,0.15);">
+                            <div style="font-family:'Cinzel',serif;font-size:24px;color:#e60000;font-weight:700;">1,300+</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">कुल वीडियोज़</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="en">Total Videos</div>
+                        </div>
+                        <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(230,0,0,0.15);">
+                            <div style="font-family:'Cinzel',serif;font-size:24px;color:#e60000;font-weight:700;">600+</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">लॉन्ग वीडियोज़</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="en">Long Videos</div>
+                        </div>
+                    </div>
+                    <a href="https://youtube.com/@anandshakti" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#e60000;color:#fff;padding:13px 28px;border-radius:30px;font-family:'Cinzel',serif;font-size:15px;letter-spacing:1px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 0 20px rgba(230,0,0,0.3);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span class="hi">चैनल खोलें</span><span class="en">Open Channel</span>
+                    </a>
+                </div>
+ 
+                <!-- Shorts Channel -->
+                <div style="background:linear-gradient(135deg,rgba(255,153,51,0.1),rgba(13,7,2,0.8)); border:1px solid rgba(255,153,51,0.3); border-radius:24px; padding:38px 32px; position:relative; overflow:hidden;">
+                    <div style="position:absolute;top:-10px;right:-10px;font-size:120px;color:rgba(255,153,51,0.05); font-family:sans-serif; line-height:1; pointer-events:none;">⚡</div>
+                    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+                        <div style="width:52px;height:52px;background:linear-gradient(135deg,#ff9933,#d4890a);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 0 20px rgba(255,153,51,0.35);">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <div class="hi" style="font-family:'Yatra One',cursive;font-size:22px;color:#ff9933;">शॉर्ट्स चैनल</div>
+                            <div class="en" style="font-family:'Cinzel',serif;font-size:18px;color:#ff9933;letter-spacing:1px;">SHORTS CHANNEL</div>
+                            <div style="font-size:13px;color:#c8a97a;margin-top:2px;">Daily Short Videos</div>
+                        </div>
+                    </div>
+                    <p class="hi" style="font-size:18px;line-height:1.7;margin-bottom:22px;">दैनिक समस्याओं के त्वरित समाधान, मंत्र, उपाय और प्रेरणादायक क्लिप्स।<br><strong style="color:#ff9933;">प्रतिदिन १-२ शॉर्ट्स</strong></p>
+                    <p class="en" style="font-size:18px;line-height:1.7;margin-bottom:22px;">Quick remedies, mantras, solutions & inspiring clips for daily problems.<br><strong style="color:#ff9933;">1-2 Shorts Daily</strong></p>
+                    <div style="display:flex;gap:16px;margin-bottom:24px;">
+                        <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(255,153,51,0.15);">
+                            <div style="font-family:'Cinzel',serif;font-size:24px;color:#ff9933;font-weight:700;">700+</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">शॉर्ट्स वीडियोज़</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="en">Shorts Uploaded</div>
+                        </div>
+                        <div style="flex:1;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;text-align:center;border:1px solid rgba(255,153,51,0.15);">
+                            <div style="font-family:'Cinzel',serif;font-size:24px;color:#ff9933;font-weight:700;">Daily</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="hi">अपलोड</div>
+                            <div style="font-size:13px;color:#c8a97a;" class="en">Upload</div>
+                        </div>
+                    </div>
+                    <a href="https://youtube.com/@anandshakti/shorts" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff9933,#d4890a);color:#fff;padding:13px 28px;border-radius:30px;font-family:'Cinzel',serif;font-size:15px;letter-spacing:1px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 0 20px rgba(255,153,51,0.25);" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span class="hi">शॉर्ट्स देखें</span><span class="en">Watch Shorts</span>
+                    </a>
+                </div>
             </div>
-            <div class="image-wrapper" style="height: 380px;">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/16150446782432551794" alt="Mera Anubhav Playlist">
+ 
+            <!-- ── ROW 2: Playlist cards ── -->
+            <div style="margin-bottom:28px;">
+                <h3 style="font-family:'Yatra One',cursive;font-size:30px;color:#ff9933;margin-bottom:20px;border-left:5px solid #ff9933;padding-left:18px;" class="hi">प्रमुख प्लेलिस्ट</h3>
+                <h3 style="font-family:'Cinzel',serif;font-size:26px;color:#ff9933;margin-bottom:20px;border-left:5px solid #ff9933;padding-left:18px;letter-spacing:2px;" class="en">KEY PLAYLISTS</h3>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+ 
+                    <!-- Playlist 1: Mera Anubhav -->
+                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#ff9933';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(255,153,51,0.2)';this.style.transform='translateY(0)'">
+                        <div style="width:44px;height:44px;background:rgba(230,0,0,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(230,0,0,0.3);">
+                            <i class="fa-solid fa-heart" style="color:#e60000;font-size:18px;"></i>
+                        </div>
+                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#ff9933;margin-bottom:8px;">मेरा अनुभव</div>
+                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#ff9933;margin-bottom:8px;letter-spacing:1px;">MERA ANUBHAV</div>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">गुरु पिता के व्यक्तिगत आध्यात्मिक अनुभव।</p>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Guru Pita's personal spiritual experiences.</p>
+                        <div style="font-family:'Cinzel',serif;font-size:22px;color:#fff;font-weight:700;">139+ <span style="font-size:13px;color:#c8a97a;font-weight:400;">videos</span></div>
+                    </div>
+ 
+                    <!-- Playlist 2: Satsang -->
+                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#ff9933';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(255,153,51,0.2)';this.style.transform='translateY(0)'">
+                        <div style="width:44px;height:44px;background:rgba(255,153,51,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(255,153,51,0.3);">
+                            <i class="fa-solid fa-om" style="color:#ff9933;font-size:18px;"></i>
+                        </div>
+                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#ff9933;margin-bottom:8px;">साप्ताहिक सत्संग</div>
+                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#ff9933;margin-bottom:8px;letter-spacing:1px;">WEEKLY SATSANG</div>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">रविवार और बुधवार के पूर्ण सत्संग प्रवचन।</p>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Full satsang discourses from Sunday & Wednesday.</p>
+                        <div style="font-family:'Cinzel',serif;font-size:22px;color:#fff;font-weight:700;">500+ <span style="font-size:13px;color:#c8a97a;font-weight:400;">videos</span></div>
+                    </div>
+ 
+                    <!-- Playlist 3: Shorts / Upay -->
+                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#ff9933';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(255,153,51,0.2)';this.style.transform='translateY(0)'">
+                        <div style="width:44px;height:44px;background:rgba(255,153,51,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(255,153,51,0.3);">
+                            <i class="fa-solid fa-bolt" style="color:#ff9933;font-size:18px;"></i>
+                        </div>
+                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#ff9933;margin-bottom:8px;">उपाय और शॉर्ट्स</div>
+                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#ff9933;margin-bottom:8px;letter-spacing:1px;">REMEDIES & SHORTS</div>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">दैनिक जीवन के उपाय, मंत्र और आत्मिक टिप्स।</p>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Daily life remedies, mantras & spiritual tips.</p>
+                        <div style="font-family:'Cinzel',serif;font-size:22px;color:#fff;font-weight:700;">700+ <span style="font-size:13px;color:#c8a97a;font-weight:400;">videos</span></div>
+                    </div>
+ 
+                    <!-- Playlist 4: Gyan Chacha -->
+                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(100,180,255,0.25);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#64b4ff';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(100,180,255,0.25)';this.style.transform='translateY(0)'">
+                        <div style="width:44px;height:44px;background:rgba(100,180,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(100,180,255,0.3);">
+                            <i class="fa-solid fa-book-open" style="color:#64b4ff;font-size:18px;"></i>
+                        </div>
+                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#64b4ff;margin-bottom:8px;">ज्ञान चाचा</div>
+                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#64b4ff;margin-bottom:8px;letter-spacing:1px;">GYAN CHACHA</div>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">आध्यात्मिक ज्ञान, शास्त्र कथाएं और पौराणिक रहस्य।</p>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Spiritual knowledge, scripture stories & mythological secrets.</p>
+                        <a href="https://youtube.com/@anandshakti" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:#64b4ff;font-size:14px;text-decoration:none;font-family:'Cinzel',serif;letter-spacing:1px;border:1px solid rgba(100,180,255,0.3);padding:8px 16px;border-radius:20px;transition:0.3s;" onmouseover="this.style.background='rgba(100,180,255,0.15)'" onmouseout="this.style.background='transparent'">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span class="hi">प्लेलिस्ट देखें</span><span class="en">View Playlist</span>
+                        </a>
+                    </div>
+ 
+                    <!-- Playlist 5: Vidya -->
+                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(180,120,255,0.25);border-radius:18px;padding:28px 22px;transition:0.3s;" onmouseover="this.style.borderColor='#b478ff';this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='rgba(180,120,255,0.25)';this.style.transform='translateY(0)'">
+                        <div style="width:44px;height:44px;background:rgba(180,120,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(180,120,255,0.3);">
+                            <i class="fa-solid fa-graduation-cap" style="color:#b478ff;font-size:18px;"></i>
+                        </div>
+                        <div class="hi" style="font-family:'Yatra One',cursive;font-size:20px;color:#b478ff;margin-bottom:8px;">विद्या प्लेलिस्ट</div>
+                        <div class="en" style="font-family:'Cinzel',serif;font-size:16px;color:#b478ff;margin-bottom:8px;letter-spacing:1px;">VIDYA PLAYLIST</div>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="hi">सनातन विद्या, वेद-पुराण ज्ञान और आत्मिक शिक्षा।</p>
+                        <p style="font-size:15px;color:#c8a97a;line-height:1.6;margin-bottom:14px;" class="en">Sanatan Vidya, Vedic knowledge & spiritual education.</p>
+                        <a href="https://youtube.com/@anandshakti" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:#b478ff;font-size:14px;text-decoration:none;font-family:'Cinzel',serif;letter-spacing:1px;border:1px solid rgba(180,120,255,0.3);padding:8px 16px;border-radius:20px;transition:0.3s;" onmouseover="this.style.background='rgba(180,120,255,0.15)'" onmouseout="this.style.background='transparent'">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span class="hi">प्लेलिस्ट देखें</span><span class="en">View Playlist</span>
+                        </a>
+                    </div>
+ 
+                    <!-- Playlist 6: Add More placeholder -->
+                    <div style="background:rgba(255,255,255,0.02);border:2px dashed rgba(255,153,51,0.2);border-radius:18px;padding:28px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:200px;">
+                        <i class="fa-solid fa-circle-plus" style="font-size:36px;color:rgba(255,153,51,0.3);margin-bottom:14px;"></i>
+                        <div class="hi" style="font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:rgba(255,153,51,0.4);line-height:1.6;">और प्लेलिस्ट<br>जोड़ें</div>
+                        <div class="en" style="font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(255,153,51,0.4);font-style:italic;line-height:1.6;">Add More<br>Playlists</div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- ── ROW 3: Total impact summary bar ── -->
+            <div style="background:linear-gradient(135deg,rgba(230,0,0,0.08),rgba(255,153,51,0.06),rgba(13,7,2,0.9));border:1px solid rgba(255,153,51,0.2);border-radius:20px;padding:32px 40px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center;">
+                <div style="text-align:center;">
+                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1,300+</div>
+                    <div style="font-size:15px;color:#c8a97a;" class="hi">कुल वीडियोज़</div><div style="font-size:15px;color:#c8a97a;" class="en">Total Videos</div>
+                </div>
+                <div style="width:1px;height:60px;background:rgba(255,153,51,0.2);"></div>
+                <div style="text-align:center;">
+                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">700+</div>
+                    <div style="font-size:15px;color:#c8a97a;" class="hi">शॉर्ट्स</div><div style="font-size:15px;color:#c8a97a;" class="en">Shorts</div>
+                </div>
+                <div style="width:1px;height:60px;background:rgba(255,153,51,0.2);"></div>
+                <div style="text-align:center;">
+                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff9933,#d4890a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">139+</div>
+                    <div style="font-size:15px;color:#c8a97a;" class="hi">मेरा अनुभव</div><div style="font-size:15px;color:#c8a97a;" class="en">Mera Anubhav</div>
+                </div>
+                <div style="width:1px;height:60px;background:rgba(255,153,51,0.2);"></div>
+                <div style="text-align:center;">
+                    <div style="font-family:'Cinzel',serif;font-size:42px;font-weight:900;color:#25D366;">लाखों</div>
+                    <div style="font-size:15px;color:#c8a97a;" class="hi">भक्तों का विश्वास</div><div style="font-size:15px;color:#c8a97a;" class="en">Devotees Trust</div>
+                </div>
             </div>
         </div>
     </section>
