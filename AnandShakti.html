@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आनंद शक्ति दरबार - प्रीमियम डिजिटल अनुभव</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ==========================================================================
+           1. बैकग्राउंड फोटो और कस्टमाइजेशन गाइड (BACKGROUND IMAGE GUIDE)
+           --------------------------------------------------------------------------
+           अगर आप किसी भी स्लाइड के पीछे अपनी पसंद की फोटो लगाना चाहते हैं, तो नीचे दिए गए 
+           'background-image: url(...)' में अपनी फोटो का लिंक (URL) या नाम पेस्ट कर दें।
+           ========================================================================== */
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: #120a07;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 40px 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fdf5e6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- प्रीमियम स्लाइड कंटेनर --- */
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #1c110b; /* मुख्य प्रीमियम डार्क ब्राउन कलर */
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            border: 1px solid rgba(255, 153, 51, 0.15);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ग्लोइंग बैकग्राउंड डिजाइन (डिफ़ॉल्ट रूप से चालू, फोटो लगाने पर यह पीछे रहेगा) */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(255, 153, 51, 0.18) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .slide-container > * { z-index: 2; position: relative; }
+
+        /* --- टाइपोग्राफी --- */
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: #ff9933; margin: 0; }
+        h1 { font-size: 76px; line-height: 1.1; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+        .slide-title { font-size: 46px; margin-bottom: 35px; border-left: 8px solid #ff9933; padding-left: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        p, li { font-size: 21px; color: #e0d0c0; line-height: 1.65; }
+        .content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; }
+
+        /* ==========================================================================
+           2. टॉप प्रीमियम क्विक एक्शन बार (TOP ACTION BAR - BRAND NEW)
+           ========================================================================== */
+        .top-premium-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px auto 0 auto;
+            width: 100%;
+            max-width: 950px;
+            background: rgba(28, 17, 11, 0.6);
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 153, 51, 0.25);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* कॉल और व्हाट्सएप बटन्स */
+        .btn-call {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-call:hover {
+            background: #fff;
+            color: #120a07;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+        }
+
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+            color: #25D366;
+            border: 1px solid rgba(37, 211, 102, 0.4);
+        }
+        .btn-whatsapp:hover {
+            background: #25D366;
+            color: #fff;
+            transform: translateY(-3px);
+            border-color: #25D366;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* महा प्रीमियम यूट्यूब बटन - स्पेशल पल्स इफेक्ट */
+        .btn-youtube-highlight {
+            background: linear-gradient(135deg, #ff0000 0%, #b30000 100%);
+            color: #fff;
+            border: none;
+            font-size: 19px;
+            padding: 12px 35px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            font-weight: bold;
+        }
+        .btn-youtube-highlight:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+        }
+
+        /* --- लेआउट्स --- */
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
+        .image-wrapper { border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .tiled-content { display: flex; gap: 30px; width: 100%; }
+        .tile { 
+            background: rgba(255, 255, 255, 0.04); 
+            border: 1px solid rgba(255, 153, 51, 0.25); 
+            border-radius: 20px; padding: 40px 30px; flex: 1; 
+            text-align: center; backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .tile:hover { background: rgba(255, 153, 51, 0.08); transform: translateY(-10px); border-color: #ff9933; }
+        .tile i { font-size: 50px; color: #ff9933; margin-bottom: 25px; }
+
+        /* टेबल स्टाइल */
+        table { width: 100%; border-collapse: separate; border-spacing: 0 14px; }
+        th { background: #ff9933; color: #120a07; padding: 20px; font-size: 24px; text-align: left; border-radius: 12px; }
+        td { background: rgba(255, 255, 255, 0.06); padding: 20px; font-size: 20px; border-radius: 12px; }
+        tr td:first-child { color: #ff9933; font-weight: 600; }
+
+        /* चार्ट सिमुलेशन */
+        .bar-chart { display: flex; flex-direction: column; gap: 25px; width: 100%; background: rgba(0,0,0,0.2); padding: 40px; border-radius: 24px; }
+        .bar-container { display: flex; align-items: center; gap: 25px; }
+        .bar-label { flex: 0 0 220px; text-align: right; font-weight: 600; font-size: 20px; }
+        .bar-bg { flex-grow: 1; background: rgba(255,255,255,0.05); height: 35px; border-radius: 8px; overflow: hidden; }
+        .bar-fill { height: 100%; background: linear-gradient(90deg, #ff9933, #d48806); border-radius: 8px; }
+        .bar-value { font-weight: bold; font-size: 20px; color: #ff9933; width: 80px; }
+
+        /* ब्लीड लेआउट (Apple Style) */
+        .bleed-image-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
+        .bleed-image-layout .content-container { padding: 80px 70px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .bleed-image-layout img.bleed-image-side { height: 720px; width: 100%; object-fit: cover; }
+
+        /* सोशल लिंक्स */
+        .social-links { display: flex; gap: 25px; margin-top: 35px; }
+        .social-links a { 
+            width: 65px; height: 65px; background: rgba(255,153,51,0.08); 
+            border: 2px solid rgba(255, 153, 51, 0.4); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 30px; color: #ff9933; text-decoration: none; transition: all 0.3s ease;
+        }
+        .social-links a:hover { background: #ff9933; color: #120a07; transform: scale(1.15); box-shadow: 0 0 20px rgba(255,153,51,0.4); }
+
+        .booking-alert { background: linear-gradient(135deg, rgba(255, 153, 51, 0.15) 0%, rgba(214, 136, 6, 0.05) 100%); border: 2px dashed #ff9933; padding: 35px; border-radius: 20px; margin-top: 35px; text-align: center; }
+
+        /* साइड नेविगेशन डॉट्स */
+        .nav-dots { position: fixed; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 100; }
+        .nav-dot { width: 12px; height: 12px; background: rgba(255,255,255,0.2); border-radius: 50%; transition: all 0.3s ease; }
+        .nav-dot:hover { background: #ff9933; transform: scale(1.3); }
+    </style>
+</head>
+<body>
+
+<div class="nav-dots">
+    <a href="#slide1" class="nav-dot" title="मुख्य पृष्ठ"></a>
+    <a href="#slide2" class="nav-dot" title="संस्कार"></a>
+    <a href="#slide3" class="nav-dot" title="गुरु पिता परिचय"></a>
+    <a href="#slide4" class="nav-dot" title="वंश परंपरा"></a>
+    <a href="#slide5" class="nav-dot" title="डिजिटल केंद्र"></a>
+    <a href="#slide6" class="nav-dot" title="ग्रोथ स्टेट्स"></a>
+    <a href="#slide7" class="nav-dot" title="मेरा अनुभव"></a>
+    <a href="#slide8" class="nav-dot" title="गैलरी"></a>
+    <a href="#slide9" class="nav-dot" title="समय सारणी"></a>
+    <a href="#slide10" class="nav-dot" title="अपॉइंटमेंट"></a>
+    <a href="#slide11" class="nav-dot" title="संपर्क"></a>
+    <a href="#slide12" class="nav-dot" title="समापन"></a>
+</div>
+
+<div class="slide-container" id="slide1" style="background-image: url('');">
+    <div class="content-area" style="text-align: center; justify-content: flex-start; padding-top: 20px;">
+        <div style="margin-bottom: 15px;"><i class="fa-solid fa-om" style="font-size: 75px; color: #ff9933; filter: drop-shadow(0 0 15px rgba(255,153,51,0.3));"></i></div>
+        <h1>आनंद शक्ति दरबार</h1>
+        <p style="font-size: 32px; color: #d48806; font-family: 'Playfair Display'; letter-spacing: 4px; font-weight: bold;">सत्य, सेवा और आत्मिक जागृति</p>
+        
+        <div class="top-premium-actions">
+            <a href="tel:+91XXXXXXXXXX" class="action-btn btn-call">
+                <i class="fa-solid fa-phone"></i> अभी कॉल करें
+            </a>
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="action-btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> व्हाट्सएप संपर्क
+            </a>
+            <a href="https://youtube.com/@anandshakti" target="_blank" class="action-btn btn-youtube-highlight">
+                <i class="fa-brands fa-youtube"></i> यूट्यूब मुख्य चैनल
+            </a>
+        </div>
+
+        <div class="image-wrapper" style="width: 850px; height: 280px; margin: 35px auto 0 auto; border: none;">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/10472154144585771306" alt="Darbar Entrance Premium">
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2" style="background: linear-gradient(135deg, #1c110b 0%, #3d2416 100%);">
+    <div class="content-area" style="text-align: center;">
+        <hr style="width: 120px; border: 3px solid #ff9933; margin: 0 auto 35px;">
+        <h2 style="font-size: 68px; color: #fff; font-family: 'Playfair Display';">वंश परंपरा और संस्कार</h2>
+        <p style="max-width: 900px; margin: 35px auto; font-size: 26px; opacity: 0.85; color: #e0d0c0; line-height: 1.8;">
+            "गुरु पिता के पूर्वजों की दिव्य गाथा, आध्यात्मिक चेतना और लोक कल्याण की भावना ही इस पावन दरबार की स्थापना का मूल स्तंभ है।"
+        </p>
+        <hr style="width: 120px; border: 1px solid rgba(255,153,51,0.3); margin: 0 auto;">
+    </div>
+</div>
+
+<div class="slide-container bleed-image-layout" id="slide3">
+    <div class="content-container">
+        <h2 class="slide-title">गुरु पिता परिचय</h2>
+        <p>गुरु पिता के पावन सानिध्य में आनंद शक्ति दरबार आज देश-विदेश में लाखों श्रद्धालुओं के जीवन में मानसिक शांति और सकारात्मक ऊर्जा का संचार कर रहा है</p>
+        <p style="margin-top: 25px;">वर्षों के गहन चिंतन, वैराग्य और कठिन साधना के पश्चात उन्होंने समाज के हर पीड़ित वर्ग के कल्याण और सनातन अध्यात्म के सरल प्रसार के लिए स्वयं को पूर्णतः समर्पित कर दिया।</p>
+        <div style="margin-top: 35px; padding: 25px; border: 1px solid #ff9933; border-radius: 15px; background: rgba(255,153,51,0.05);">
+            <p style="color: #ff9933; font-weight: 600; font-size: 22px; font-style: italic;">दर्शन: "मानव सेवा ही सबसे बड़ा माधव संकल्प है और समाज के अंतिम व्यक्ति तक शांति पहुँचाना हमारा लक्ष्य है।"</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="bleed-image-side" src="http://googleusercontent.com/image_collection/image_retrieval/5661471245290250645" alt="Guru Pita Portrait">
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">दिव्य वंश परंपरा</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3 style="margin-bottom: 25px; font-size: 38px; color: #fff;">माता-पिता और बाबा-दादी की प्रेरणा</h3>
+                <p>गुरु पिता ने अपने व्याख्यानों में हमेशा अपने पूर्वजों के धार्मिक संस्कारों को सर्वोपरि स्थान दिया है। उनके पूज्य बाबा और दादी जी द्वारा संजोए गए कड़े आध्यात्मिक नियम और सनातन मर्यादा ही आज इस विशाल वटवृक्ष का मूल आधार हैं।</p>
+                <p style="margin-top: 20px;">पारिवारिक संस्कारों, माता-पिता के आशीर्वाद और ईश्वरीय कृपा के अद्भुत मिलन ने ही गुरु पिता को जन-कल्याण के इस पावन मार्ग पर अग्रसर होने की परम शक्ति दी।</p>
+            </div>
+            <div class="image-wrapper" style="height: 460px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/15862032577638838868" alt="Family Lineage Heritage">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">डिजिटल सत्संग केंद्र</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <i class="fa-brands fa-youtube"></i>
+                <h3>मुख्य YouTube चैनल</h3>
+                <p>विस्तृत आध्यात्मिक समाधान और लॉन्ग सत्संग वीडियोज़।</p>
+                <p style="margin-top: 15px; color: #ff9933; font-weight: 600;">हर रविवार और बुधवार<br>प्रातः 08:00 बजे (ऑन टाइम)</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <h3>शॉर्ट्स चैनल</h3>
+                <p>दैनिक जीवन की समस्याओं के त्वरित और अचूक निवारण।</p>
+                <p style="margin-top: 15px; color: #ff9933; font-weight: 600;">प्रतिदिन 1 से 2 वीडियोज़<br>ज्ञान के अनमोल मोती</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-heart-syntax"></i>
+                <h3>डिजिटल प्रभाव</h3>
+                <p>बिना किसी आडंबर के विशुद्ध सनातन ज्ञान का आधुनिक माध्यम।</p>
+                <p style="margin-top: 15px; color: #fff; font-weight: 600;">सत्य आधारित शीर्षक<br>जिज्ञासा और समाधान का संगम</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">चैनल Growth और सोशल इम्पैक्ट</h2>
+    <div class="content-area">
+        <div class="bar-chart">
+            <div class="bar-container">
+                <div class="bar-label">कुल अपलोडेड वीडियोज़</div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+                <div class="bar-value">1,300+</div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-label">मेरा अनुभव प्लेलिस्ट</div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+                <div class="bar-value">139</div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-label">दैनिक लघु संदेश (Shorts)</div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+                <div class="bar-value">750+</div>
+            </div>
+        </div>
+        <p style="margin-top: 45px; text-align: center; font-style: italic; font-size: 22px; color: #ff9933;">
+            "हर एक वीडियो समाज में फैली कुरीतियों पर प्रहार और सत्य का साक्षात मार्गदर्शन है।"
+        </p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">प्लेलिस्ट: मेरा अनुभव</h2>
+    <div class="content-area">
+        <div class="two-column" style="grid-template-columns: 1.2fr 0.8fr;">
+            <div>
+                <h3 style="font-size: 32px; color: #fff; margin-bottom: 20px;">139+ दिव्य अनुभूतियों का अनूठा संग्रह</h3>
+                <p>मुख्य चैनल पर उपलब्ध यह प्लेलिस्ट भक्तों के बीच अत्यंत लोकप्रिय है। इसमें गुरु पिता ने अपने जीवनकाल में घटे चमत्कारों, साधना के अनुभवों और पूर्वजों के जीवन वृत्तांत को बेहद सरल भाषा में साझा किया है।</p>
+                <p style="margin-top: 20px; color: #ff9933; font-weight: 600;"><i class="fa-solid fa-play" style="font-size: 16px; margin-right: 10px;"></i> शुरुआती वीडियोज़ में ही गुरु पिता के माता-पिता, बाबा और दादी जी के पावन जीवन का विस्तृत परिचय समाहित है।</p>
+            </div>
+            <div class="image-wrapper" style="height: 380px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/16150446782432551794" alt="YouTube Playlist Banner">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">दरबार भव्य गैलरी</h2>
+    <div class="content-area">
+        <div class="tiled-content" style="gap: 20px;">
+            <div class="image-wrapper" style="flex: 1.6; height: 420px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/13300501181839083282" alt="Darbar Sacred Rituals">
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+                <div class="image-wrapper" style="height: 200px;">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/1793965280267522216" alt="Satsang Gathering">
+                </div>
+                <div class="image-wrapper" style="height: 200px;">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/6830868313729270465" alt="Temple Outer View">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">दर्शन एवं सेवा समय सारणी</h2>
+    <div class="content-area">
+        <table>
+            <thead>
+                <tr>
+                    <th>दर्शन का दिन</th>
+                    <th>प्रातः कालीन सत्र</th>
+                    <th>संध्या कालीन सत्र</th>
+                    <th>विशेष सेवा विवरण</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>रविवार (महासत्संग)</td><td>प्रातः 08:00 - दोपहर 02:00</td><td>सायं 04:00 - रात्रि 08:00</td><td>मुख्य सत्संग एवं नई वीडियो प्रसारण</td></tr>
+                <tr><td>बुधवार (विशेष दर्शन)</td><td>प्रातः 08:00 - दोपहर 01:00</td><td>सायं 03:00 - सायं 07:00</td><td>विशेष शंका समाधान एवं वीडियो रिलीज</td></tr>
+                <tr><td>सोमवार, मंगलवार, शुक्रवार</td><td>प्रातः 09:00 - दोपहर 12:00</td><td>सायं 04:00 - सायं 06:00</td><td>व्यक्तिगत परामर्श एवं सामान्य दर्शन</td></tr>
+                <tr style="color: #ff4d4d; font-weight: 600;"><td>गुरुवार एवं शनिवार</td><td>-- पूर्णतः विश्राम --</td><td>-- पूर्णतः विश्राम --</td><td>दरबार पूर्ण अवकाश एवं एकांत साधना</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">अपॉइंटमेंट स्लॉट बुकिंग प्रक्रिया</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h3>1. समय आरक्षित करें</h3>
+                <p>भीड़ और अव्यवस्था से बचने के लिए दर्शन हेतु कम से कम 7 दिन या 1 सप्ताह पहले अपना स्लॉट ऑनलाइन अवश्य बुक करें।</p>
+            </div>
+            <div class="tile">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                <h3>2. WhatsApp अलर्ट</h3>
+                <p>सफलतापूर्वक बुकिंग पूर्ण होते ही आपके द्वारा दिए गए मोबाइल नंबर पर तुरंत पुष्टि (Confirmation) का संदेश भेजा जाएगा।</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <h3>3. ईमेल पुष्टिकरण</h3>
+                <p>टोकन नंबर, तिथि और आवश्यक नियमों की पूरी जानकारी आपके पंजीकृत ईमेल पते पर भी स्वतः प्रेषित कर दी जाएगी।</p>
+            </div>
+        </div>
+        <div class="booking-alert">
+            <p style="font-size: 22px; font-weight: 600; color: #ff9933;">
+                <i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i> ध्यान दें: बिना पूर्व अपॉइंटमेंट के व्यक्तिगत परामर्श सत्र में प्रवेश पूर्णतः वर्जित है।
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">दरबार संपर्क एवं हेल्पलाइन</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3 style="color: #fff; margin-bottom: 20px; font-size: 30px;">हमसे संपर्क स्थापित करें</h3>
+                <p style="margin-bottom: 15px;"><strong>दरबार का पता:</strong> आनंद शक्ति दरबार, मुख्य परिसर, भारत</p>
+                <p style="margin-bottom: 15px;"><strong>हेल्पलाइन नंबर:</strong> +91-XXXXX-XXXXX (प्रातः 10:00 से सायं 05:00 तक)</p>
+                <p style="margin-bottom: 25px;"><strong>आधिकारिक ईमेल:</strong> contact@anandshakti.org</p>
+                
+                <h3 style="color: #ff9933; font-size: 24px; margin-bottom: 15px;">आधिकारिक सोशल मीडिया प्लेटफॉर्म्स:</h3>
+                <div class="social-links">
+                    <a href="https://youtube.com/@anandshakti" target="_blank" title="YouTube Main Channel"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" title="WhatsApp Channel"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="image-wrapper" style="height: 420px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/15717475673169465613" alt="Spiritual Environment">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide12" style="background: linear-gradient(rgba(18, 10, 7, 0.75), rgba(18, 10, 7, 0.75)), url('http://googleusercontent.com/image_collection/image_retrieval/13300501181839083282'); background-size: cover; background-position: center;">
+    <div class="content-area" style="text-align: center; color: #fff;">
+        <h1 style="color: #ff9933; font-size: 95px; font-family: 'Playfair Display'; font-weight: 700; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.6));">शांति और आनंद</h1>
+        <p style="font-size: 32px; letter-spacing: 3px; color: #ffe0b2; margin-top: 15px;">"गुरु पिता का दिव्य आशीर्वाद और ईश्वरीय संरक्षण सदा आपके साथ रहे।"</p>
+        <p style="margin-top: 120px; opacity: 0.6; font-size: 18px; letter-spacing: 1px;">©️ 2026 आनंद शक्ति दरबार - सर्वाधिकार सुरक्षित | डिजिटल प्रबंधन प्रकोष्ठ</p>
+    </div>
+</div>
+
+</body>
+</html>
