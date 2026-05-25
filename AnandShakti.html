@@ -9,30 +9,168 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&family=Yatra+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* ══ THEME VARIABLES ══ */
         :root {
             --saffron: #ff9933;
             --gold: #d4890a;
             --deep-gold: #a86000;
-            --bg-dark: #0d0702;
-            --bg-mid: #1a0e08;
-            --bg-card: rgba(255,153,51,0.05);
             --text-light: #fdf0d8;
             --text-muted: #c8a97a;
         }
+ 
+        /* ══ DARK MODE (default) ══ */
+        [data-theme="dark"] {
+            --bg-dark: #0d0702;
+            --bg-mid: #1a0e08;
+            --bg-card: rgba(255,153,51,0.05);
+            --bg-alt: #110905;
+            --bg-mid-section-a: #1a0e08;
+            --bg-mid-section-b: #2e1a0d;
+            --table-cell-bg: rgba(255,255,255,0.04);
+            --table-cell-border: rgba(255,153,51,0.07);
+            --quote-color: #fdf0d8;
+            --text-primary: #fdf0d8;
+            --text-secondary: #c8a97a;
+            --navbar-bg: rgba(13,7,2,0.96);
+            --section-overlay-a: rgba(255,153,51,0.18);
+            --section-overlay-b: rgba(212,137,10,0.12);
+            --lotus-stroke: rgba(255,153,51,0.12);
+            --lotus-stroke2: rgba(255,153,51,0.10);
+            --lotus-stroke3: rgba(255,153,51,0.08);
+            --lotus-line: rgba(255,153,51,0.08);
+            --mandala-ring: rgba(255,153,51,0.07);
+            --mandala-ring2: rgba(212,137,10,0.06);
+            --mandala-ring3: rgba(255,153,51,0.04);
+            --bubble-bg: rgba(255,153,51,0.18);
+            --bubble-bg2: rgba(212,137,10,0.05);
+            --bubble-border: rgba(255,153,51,0.12);
+            --hero-frame-bg: rgba(13,7,2,0.5);
+            --image-border: rgba(255,153,51,0.2);
+            --playlist-bg: rgba(255,255,255,0.03);
+            --playlist-border: rgba(255,153,51,0.2);
+            --playlist-hover: rgba(255,153,51,0.06);
+            --yt-stats-bg-a: rgba(230,0,0,0.08);
+            --yt-stats-bg-b: rgba(255,153,51,0.06);
+            --yt-stats-bg-c: rgba(13,7,2,0.9);
+            --appt-notice-bg: rgba(255,153,51,0.08);
+            --appt-notice-bg2: rgba(212,137,10,0.04);
+            --appt-timeline-bg: rgba(0,0,0,0.3);
+            --map-info-bg: rgba(255,153,51,0.05);
+            --social-card-bg: rgba(255,255,255,0.03);
+            --social-card-border: rgba(255,255,255,0.08);
+            --footer-bg: #0d0702;
+            --particle-color-a: rgba(255,153,51,0.15);
+            --particle-color-b: rgba(212,137,10,0.08);
+            --mandala-stroke: rgba(255,153,51,0.06);
+            --sacred-line: rgba(255,153,51,0.07);
+            --hero-text-shadow: 0 0 60px rgba(255,153,51,0.3), 0 4px 20px rgba(0,0,0,0.8);
+        }
+ 
+        /* ══ LIGHT MODE ══ */
+        [data-theme="light"] {
+            --bg-dark: #fdf6ed;
+            --bg-mid: #faebd7;
+            --bg-card: rgba(212,137,10,0.06);
+            --bg-alt: #fff8f0;
+            --bg-mid-section-a: #faebd7;
+            --bg-mid-section-b: #f5ddb3;
+            --table-cell-bg: rgba(212,137,10,0.05);
+            --table-cell-border: rgba(168,96,0,0.12);
+            --quote-color: #3a1f00;
+            --text-primary: #2a1200;
+            --text-secondary: #7a4a10;
+            --navbar-bg: rgba(253,246,237,0.97);
+            --section-overlay-a: rgba(255,153,51,0.10);
+            --section-overlay-b: rgba(212,137,10,0.07);
+            --lotus-stroke: rgba(168,96,0,0.15);
+            --lotus-stroke2: rgba(168,96,0,0.12);
+            --lotus-stroke3: rgba(168,96,0,0.09);
+            --lotus-line: rgba(168,96,0,0.09);
+            --mandala-ring: rgba(168,96,0,0.10);
+            --mandala-ring2: rgba(212,137,10,0.09);
+            --mandala-ring3: rgba(168,96,0,0.06);
+            --bubble-bg: rgba(255,153,51,0.12);
+            --bubble-bg2: rgba(212,137,10,0.04);
+            --bubble-border: rgba(168,96,0,0.15);
+            --hero-frame-bg: rgba(253,246,237,0.75);
+            --image-border: rgba(168,96,0,0.2);
+            --playlist-bg: rgba(168,96,0,0.04);
+            --playlist-border: rgba(168,96,0,0.18);
+            --playlist-hover: rgba(255,153,51,0.08);
+            --yt-stats-bg-a: rgba(230,0,0,0.05);
+            --yt-stats-bg-b: rgba(255,153,51,0.05);
+            --yt-stats-bg-c: rgba(253,246,237,0.9);
+            --appt-notice-bg: rgba(255,153,51,0.08);
+            --appt-notice-bg2: rgba(212,137,10,0.03);
+            --appt-timeline-bg: rgba(212,137,10,0.06);
+            --map-info-bg: rgba(255,153,51,0.06);
+            --social-card-bg: rgba(168,96,0,0.04);
+            --social-card-border: rgba(168,96,0,0.14);
+            --footer-bg: #fdf0d8;
+            --particle-color-a: rgba(168,96,0,0.12);
+            --particle-color-b: rgba(212,137,10,0.06);
+            --mandala-stroke: rgba(168,96,0,0.07);
+            --sacred-line: rgba(168,96,0,0.08);
+            --hero-text-shadow: 0 0 40px rgba(168,96,0,0.2), 0 3px 12px rgba(0,0,0,0.15);
+        }
+ 
+        [data-theme="light"] body { color: var(--text-primary); }
+        [data-theme="light"] p, [data-theme="light"] li { color: var(--text-primary); }
+        [data-theme="light"] .quote-block { color: var(--quote-color); }
+        [data-theme="light"] td { color: var(--text-primary); }
+        [data-theme="light"] .appt-step-label { color: var(--text-secondary); }
+        [data-theme="light"] .section-title { color: var(--saffron); }
+        [data-theme="light"] h1 { color: var(--saffron); }
+        [data-theme="light"] .anchor-link { color: var(--text-secondary); }
+        [data-theme="light"] .navbar-brand div { color: var(--text-secondary) !important; }
+        [data-theme="light"] .ornament-symbol { color: var(--saffron); }
+        [data-theme="light"] .sec-divider-icon { color: rgba(168,96,0,0.5); }
+ 
+        /* ══ THEME TOGGLE BUTTON ══ */
+        .theme-toggle-btn {
+            background: transparent;
+            border: 1px solid rgba(255,153,51,0.4);
+            color: var(--saffron);
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .theme-toggle-btn:hover { background: var(--saffron); color: var(--bg-dark); }
+        [data-theme="light"] .theme-toggle-btn { border-color: rgba(168,96,0,0.4); }
+ 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Tiro Devanagari Hindi', serif; background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
+        body {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
         body.english-mode { font-family: 'Cormorant Garamond', serif; }
         body.english-mode .hi { display: none !important; }
         body:not(.english-mode) .en { display: none !important; }
  
         #spiritual-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
  
+        /* ══ PREMIUM SACRED GEOMETRY BACKGROUND ══ */
+        .sacred-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            overflow: hidden;
+        }
+        .sacred-svg {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+        }
+ 
         .bubble-container { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
         .bubble {
             position: absolute; border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255,153,51,0.18), rgba(212,137,10,0.05));
-            border: 1px solid rgba(255,153,51,0.12);
+            background: radial-gradient(circle at 30% 30%, var(--bubble-bg), var(--bubble-bg2));
+            border: 1px solid var(--bubble-border);
             animation: floatBubble linear infinite;
         }
         @keyframes floatBubble {
@@ -42,32 +180,64 @@
             100% { transform: translateY(-15vh) translateX(var(--drift)) scale(1.1); opacity: 0; }
         }
  
-        .mandala-ring { position: fixed; border-radius: 50%; border: 1px solid rgba(255,153,51,0.07); pointer-events: none; z-index: 0; }
+        .mandala-ring { position: fixed; border-radius: 50%; border: 1px solid var(--mandala-ring); pointer-events: none; z-index: 0; }
         .mr1 { width:700px;height:700px;top:50%;left:50%;margin:-350px 0 0 -350px;animation:spinSlow 60s linear infinite; }
-        .mr2 { width:500px;height:500px;top:50%;left:50%;margin:-250px 0 0 -250px;animation:spinSlow 40s linear infinite reverse;border-color:rgba(212,137,10,0.06); }
-        .mr3 { width:900px;height:900px;top:50%;left:50%;margin:-450px 0 0 -450px;animation:spinSlow 80s linear infinite;border-color:rgba(255,153,51,0.04); }
-        .mr4 { width:300px;height:300px;top:10%;right:5%;animation:spinSlow 30s linear infinite;border-color:rgba(255,153,51,0.05); }
-        .mr5 { width:200px;height:200px;bottom:15%;left:3%;animation:spinSlow 25s linear infinite reverse;border-color:rgba(212,137,10,0.06); }
+        .mr2 { width:500px;height:500px;top:50%;left:50%;margin:-250px 0 0 -250px;animation:spinSlow 40s linear infinite reverse;border-color:var(--mandala-ring2); }
+        .mr3 { width:900px;height:900px;top:50%;left:50%;margin:-450px 0 0 -450px;animation:spinSlow 80s linear infinite;border-color:var(--mandala-ring3); }
+        .mr4 { width:300px;height:300px;top:10%;right:5%;animation:spinSlow 30s linear infinite;border-color:var(--mandala-ring); }
+        .mr5 { width:200px;height:200px;bottom:15%;left:3%;animation:spinSlow 25s linear infinite reverse;border-color:var(--mandala-ring2); }
+ 
+        /* Premium floating OM symbols */
+        .om-float {
+            position: fixed; pointer-events: none; z-index: 0;
+            font-family: 'Tiro Devanagari Hindi', serif;
+            color: var(--saffron);
+            animation: omPulse ease-in-out infinite;
+            user-select: none;
+        }
+        @keyframes omPulse {
+            0%,100%{opacity:0.03;transform:translateY(0) scale(1) rotate(0deg);}
+            50%{opacity:0.06;transform:translateY(-12px) scale(1.03) rotate(2deg);}
+        }
+ 
+        /* Premium sacred geometry lines */
+        .sri-yantra-overlay {
+            position: fixed; top: 50%; left: 50%;
+            width: 800px; height: 800px;
+            transform: translate(-50%, -50%);
+            pointer-events: none; z-index: 0;
+            opacity: 0.04;
+            animation: spinSlow 120s linear infinite;
+        }
+        [data-theme="light"] .sri-yantra-overlay { opacity: 0.06; }
+ 
+        /* Petal rings - premium sacred geometry */
+        .petal-ring {
+            position: fixed; border-radius: 50%;
+            pointer-events: none; z-index: 0;
+            animation: spinSlow var(--dur) linear infinite var(--dir);
+        }
  
         @keyframes spinSlow { from{transform:rotate(0deg)}to{transform:rotate(360deg)} }
-        @keyframes floatOM {
-            0%,100%{transform:translateY(-50%) rotate(0deg);opacity:0.04}
-            50%{transform:translateY(-52%) rotate(3deg);opacity:0.06}
-        }
         @keyframes borderPulse {
             0%,100%{border-color:rgba(255,153,51,0.2)}
             50%{border-color:rgba(255,153,51,0.5)}
+        }
+        [data-theme="light"] @keyframes borderPulse {
+            0%,100%{border-color:rgba(168,96,0,0.25)}
+            50%{border-color:rgba(168,96,0,0.5)}
         }
  
         /* ══ NAVBAR ══ */
         .top-navbar {
             position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(13,7,2,0.96); backdrop-filter: blur(20px);
+            background: var(--navbar-bg); backdrop-filter: blur(20px);
             display: flex; justify-content: space-between; align-items: center;
             padding: 10px 40px; z-index: 1000;
             border-bottom: 1px solid rgba(255,153,51,0.25);
             animation: borderPulse 4s ease-in-out infinite;
             gap: 20px;
+            transition: background 0.4s ease;
         }
         .navbar-brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
         .navbar-om {
@@ -106,17 +276,17 @@
         .lang-toggle-btn:hover { background: var(--saffron); color: var(--bg-dark); }
  
         /* ══ SECTIONS ══ */
-        section { width: 100%; display: flex; justify-content: center; align-items: center; padding: 100px 30px; position: relative; }
+        section { width: 100%; display: flex; justify-content: center; align-items: center; padding: 100px 30px; position: relative; transition: background-color 0.4s; }
         .container { width: 100%; max-width: 1200px; position: relative; z-index: 2; }
         .section-separator { width: 70%; height: 1px; margin: 0 auto; background: linear-gradient(90deg, transparent, rgba(255,153,51,0.35), rgba(212,137,10,0.2), transparent); }
  
-        h1 { font-family: 'Cinzel', serif; font-size: 80px; font-weight: 900; line-height: 1.05; color: var(--saffron); text-align: center; text-shadow: 0 0 60px rgba(255,153,51,0.3), 0 4px 20px rgba(0,0,0,0.8); letter-spacing: 4px; }
+        h1 { font-family: 'Cinzel', serif; font-size: 80px; font-weight: 900; line-height: 1.05; color: var(--saffron); text-align: center; text-shadow: var(--hero-text-shadow); letter-spacing: 4px; }
         body:not(.english-mode) h1 { font-family: 'Yatra One', cursive; letter-spacing: 2px; }
  
         .section-title { font-family: 'Cinzel', serif; font-size: 38px; font-weight: 700; color: var(--saffron); margin-bottom: 30px; border-left: 6px solid var(--saffron); padding-left: 22px; letter-spacing: 2px; text-transform: uppercase; }
         body:not(.english-mode) .section-title { font-family: 'Yatra One', cursive; letter-spacing: 1px; text-transform: none; }
  
-        p, li { font-size: 19px; line-height: 1.75; color: var(--text-light); }
+        p, li { font-size: 19px; line-height: 1.75; color: var(--text-primary); }
         body.english-mode p, body.english-mode li { font-size: 20px; font-family: 'Cormorant Garamond', serif; }
  
         .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--gold); letter-spacing: 6px; font-style: italic; font-weight: 400; }
@@ -128,8 +298,10 @@
         .ornament-symbol { font-size: 26px; color: var(--saffron); }
  
         .top-premium-actions { display: flex; justify-content: center; gap: 16px; margin: 30px auto 0; width: 100%; max-width: 900px; background: rgba(26,14,8,0.7); padding: 14px 24px; border-radius: 60px; border: 1px solid rgba(255,153,51,0.2); backdrop-filter: blur(20px); }
+        [data-theme="light"] .top-premium-actions { background: rgba(253,246,237,0.85); border-color: rgba(168,96,0,0.2); }
         .action-btn { display: inline-flex; align-items: center; gap: 10px; padding: 11px 24px; border-radius: 30px; font-size: 16px; font-weight: 600; text-decoration: none; transition: 0.3s; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 1px; }
         .btn-call { border: 1px solid rgba(255,255,255,0.2); }
+        [data-theme="light"] .btn-call { color: var(--text-primary); border-color: rgba(0,0,0,0.2); }
         .btn-call:hover { background: #fff; color: var(--bg-dark); }
         .btn-whatsapp { border: 1px solid rgba(37,211,102,0.4); color: #25D366; }
         .btn-whatsapp:hover { background: #25D366; color: #fff; }
@@ -137,69 +309,49 @@
         .btn-youtube:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,0,0,0.45); }
         .btn-icon-wrap { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; transition: 0.3s; }
         .btn-icon-call { background: rgba(255,255,255,0.15); }
+        [data-theme="light"] .btn-icon-call { background: rgba(0,0,0,0.08); }
         .btn-icon-wa   { background: rgba(37,211,102,0.2); color: #25D366; }
         .btn-icon-yt   { background: rgba(255,0,0,0.25); }
  
         .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
-        .image-wrapper { border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,153,51,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+        .image-wrapper { border-radius: 20px; overflow: hidden; border: 1px solid var(--image-border); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
         .image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
  
-        .hero-frame { border: 1px solid rgba(255,153,51,0.2); border-radius: 4px; padding: 55px 45px 45px; position: relative; background: rgba(13,7,2,0.5); backdrop-filter: blur(10px); max-width: 880px; margin: 0 auto; }
+        .hero-frame { border: 1px solid rgba(255,153,51,0.2); border-radius: 4px; padding: 55px 45px 45px; position: relative; background: var(--hero-frame-bg); backdrop-filter: blur(10px); max-width: 880px; margin: 0 auto; transition: background 0.4s; }
         .hero-frame::before,.hero-frame::after { content: '✦'; position: absolute; font-size: 20px; color: var(--saffron); }
         .hero-frame::before { top: 14px; left: 20px; }
         .hero-frame::after { bottom: 14px; right: 20px; }
  
-        .quote-block { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; line-height: 1.8; color: var(--text-light); text-align: center; padding: 36px 60px; border-top: 1px solid rgba(255,153,51,0.2); border-bottom: 1px solid rgba(255,153,51,0.2); position: relative; }
+        .quote-block { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; line-height: 1.8; color: var(--quote-color); text-align: center; padding: 36px 60px; border-top: 1px solid rgba(255,153,51,0.2); border-bottom: 1px solid rgba(255,153,51,0.2); position: relative; }
         body:not(.english-mode) .quote-block { font-family: 'Tiro Devanagari Hindi', serif; font-style: normal; font-size: 24px; }
         .quote-block::before { content: '\201C'; font-size: 90px; color: rgba(255,153,51,0.15); position: absolute; top: -20px; left: 30px; line-height: 1; }
  
         .bg-mandala { position: relative; overflow: hidden; }
-        .bg-mandala::before { content: ''; position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,153,51,0.18) 0%, transparent 65%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(212,137,10,0.12) 0%, transparent 60%), var(--bg-dark); }
-        .bg-lotus-pattern { position: relative; }
+        .bg-mandala::before { content: ''; position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--section-overlay-a) 0%, transparent 65%), radial-gradient(ellipse 60% 40% at 80% 80%, var(--section-overlay-b) 0%, transparent 60%), var(--bg-dark); }
+        .bg-lotus-pattern { position: relative; background-color: var(--bg-dark) !important; }
         .bg-lotus-pattern::before { content: ''; position: absolute; inset: 0; z-index: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.12'/%3E%3Ccircle cx='60' cy='60' r='40' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.1'/%3E%3Ccircle cx='60' cy='60' r='25' fill='none' stroke='%23ff9933' stroke-width='0.4' stroke-opacity='0.08'/%3E%3Cline x1='5' y1='60' x2='115' y2='60' stroke='%23ff9933' stroke-width='0.3' stroke-opacity='0.08'/%3E%3Cline x1='60' y1='5' x2='60' y2='115' stroke='%23ff9933' stroke-width='0.3' stroke-opacity='0.08'/%3E%3C/svg%3E"); }
-        .bg-alt { background: #110905; }
-        .bg-mid-section { background: linear-gradient(135deg, #1a0e08 0%, #2e1a0d 50%, #1a0e08 100%); }
+        .bg-alt { background: var(--bg-alt) !important; transition: background 0.4s; }
+        .bg-mid-section { background: linear-gradient(135deg, var(--bg-mid-section-a) 0%, var(--bg-mid-section-b) 50%, var(--bg-mid-section-a) 100%); }
  
         /* ══ SCROLL REVEAL ══ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
  
         /* ══ SECTION DIVIDER ══ */
-        .sec-divider {
-            display: flex; align-items: center; gap: 20px;
-            padding: 0 30px; position: relative; z-index: 2;
-        }
+        .sec-divider { display: flex; align-items: center; gap: 20px; padding: 0 30px; position: relative; z-index: 2; }
         .sec-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,153,51,0.3), transparent); }
         .sec-divider-icon { font-size: 22px; color: rgba(255,153,51,0.5); }
  
         /* ══ PLAYLIST CARDS ══ */
         .playlist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 30px; }
-        .playlist-card {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,153,51,0.2);
-            border-radius: 20px; padding: 30px 26px; transition: all 0.3s;
-            position: relative; overflow: hidden;
-        }
-        .playlist-card:hover { border-color: var(--saffron); transform: translateY(-4px); background: rgba(255,153,51,0.06); }
+        .playlist-card { background: var(--playlist-bg); border: 1px solid var(--playlist-border); border-radius: 20px; padding: 30px 26px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .playlist-card:hover { border-color: var(--saffron); transform: translateY(-4px); background: var(--playlist-hover); }
         .playlist-card-full { grid-column: 1 / -1; }
-        .watch-now-btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: linear-gradient(135deg, #e60000, #990000);
-            color: #fff; padding: 12px 26px; border-radius: 30px;
-            font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 1px;
-            text-decoration: none; font-weight: 600; transition: 0.3s;
-            box-shadow: 0 0 20px rgba(230,0,0,0.3); margin-top: 14px;
-        }
+        .watch-now-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #e60000, #990000); color: #fff; padding: 12px 26px; border-radius: 30px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 1px; text-decoration: none; font-weight: 600; transition: 0.3s; box-shadow: 0 0 20px rgba(230,0,0,0.3); margin-top: 14px; }
         .watch-now-btn:hover { transform: scale(1.04); box-shadow: 0 0 30px rgba(230,0,0,0.5); }
  
         /* YouTube Stats */
-        .yt-stats { background: linear-gradient(135deg,rgba(230,0,0,0.08),rgba(255,153,51,0.06),rgba(13,7,2,0.9)); border: 1px solid rgba(255,153,51,0.2); border-radius: 20px; padding: 24px 36px; display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+        .yt-stats { background: linear-gradient(135deg, var(--yt-stats-bg-a), var(--yt-stats-bg-b), var(--yt-stats-bg-c)); border: 1px solid rgba(255,153,51,0.2); border-radius: 20px; padding: 24px 36px; display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
         .yt-stat-val { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 900; background: linear-gradient(135deg, #ff9933, #d4890a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .yt-stat-sep { width: 1px; height: 44px; background: rgba(255,153,51,0.2); }
  
@@ -210,14 +362,16 @@
         table { width: 100%; border-collapse: separate; border-spacing: 0 10px; margin-top: 20px; }
         th { background: linear-gradient(135deg, var(--saffron), var(--gold)); color: var(--bg-dark); padding: 14px 18px; font-size: 18px; text-align: left; border-radius: 8px; font-family: 'Cinzel', serif; letter-spacing: 1px; }
         body:not(.english-mode) th { font-family: 'Yatra One', cursive; }
-        td { background: rgba(255,255,255,0.04); padding: 13px 18px; font-size: 17px; border-radius: 8px; border: 1px solid rgba(255,153,51,0.07); }
+        td { background: var(--table-cell-bg); padding: 13px 18px; font-size: 17px; border-radius: 8px; border: 1px solid var(--table-cell-border); color: var(--text-primary); }
  
         /* ══ BOOKING ══ */
         .appt-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 26px; }
         .appt-card { border-radius: 20px; padding: 30px 26px; position: relative; overflow: hidden; transition: transform 0.3s; }
         .appt-card:hover { transform: translateY(-6px); }
         .appt-card.wa-card { background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(13,7,2,0.85)); border: 1px solid rgba(37,211,102,0.35); }
+        [data-theme="light"] .appt-card.wa-card { background: linear-gradient(135deg, rgba(37,211,102,0.08), rgba(253,246,237,0.9)); }
         .appt-card.call-card { background: linear-gradient(135deg, rgba(255,153,51,0.1), rgba(13,7,2,0.85)); border: 1px solid rgba(255,153,51,0.35); }
+        [data-theme="light"] .appt-card.call-card { background: linear-gradient(135deg, rgba(255,153,51,0.08), rgba(253,246,237,0.9)); }
         .appt-card-icon { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px; }
         .appt-card.wa-card .appt-card-icon { background: rgba(37,211,102,0.2); color: #25D366; box-shadow: 0 0 20px rgba(37,211,102,0.25); }
         .appt-card.call-card .appt-card-icon { background: rgba(255,153,51,0.15); color: var(--saffron); box-shadow: 0 0 20px rgba(255,153,51,0.2); }
@@ -225,7 +379,7 @@
         body.english-mode .appt-card h3 { font-family: 'Cinzel', serif; font-size: 18px; }
         .appt-card.wa-card h3 { color: #25D366; }
         .appt-card.call-card h3 { color: var(--saffron); }
-        .appt-timeline { display: flex; margin: 18px 0; background: rgba(0,0,0,0.3); border-radius: 14px; border: 1px solid rgba(255,153,51,0.12); overflow: hidden; }
+        .appt-timeline { display: flex; margin: 18px 0; background: var(--appt-timeline-bg); border-radius: 14px; border: 1px solid rgba(255,153,51,0.12); overflow: hidden; }
         .appt-step { flex: 1; padding: 14px 12px; text-align: center; border-right: 1px solid rgba(255,153,51,0.1); }
         .appt-step:last-child { border-right: none; }
         .appt-step-num { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: var(--saffron); line-height: 1; margin-bottom: 5px; }
@@ -235,7 +389,7 @@
         .appt-cta-btn.wa-btn:hover { background: #128C7E; }
         .appt-cta-btn.call-btn { background: linear-gradient(135deg, var(--saffron), var(--gold)); color: var(--bg-dark); box-shadow: 0 0 24px rgba(255,153,51,0.3); }
         .appt-cta-btn.call-btn:hover { transform: scale(1.03); }
-        .appt-notice { background: linear-gradient(135deg, rgba(255,153,51,0.08), rgba(212,137,10,0.04)); border: 1px solid rgba(255,153,51,0.3); border-radius: 16px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 14px; }
+        .appt-notice { background: linear-gradient(135deg, var(--appt-notice-bg), var(--appt-notice-bg2)); border: 1px solid rgba(255,153,51,0.3); border-radius: 16px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 14px; }
         .appt-notice i { font-size: 24px; color: var(--saffron); flex-shrink: 0; margin-top: 2px; }
  
         /* ══ MAP ══ */
@@ -245,14 +399,15 @@
         .map-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
         .map-btn-primary { background: linear-gradient(135deg, var(--saffron), var(--gold)); color: var(--bg-dark); box-shadow: 0 0 20px rgba(255,153,51,0.3); }
         .map-btn-primary:hover { transform: scale(1.03); }
-        .map-btn-secondary { background: rgba(255,255,255,0.06); color: var(--text-light); border: 1px solid rgba(255,255,255,0.15); }
+        .map-btn-secondary { background: var(--social-card-bg); color: var(--text-primary); border: 1px solid var(--social-card-border); }
         .map-btn-secondary:hover { background: rgba(255,255,255,0.12); }
         .map-btn-360 { background: linear-gradient(135deg, rgba(100,180,255,0.15), rgba(13,7,2,0.8)); color: #64b4ff; border: 1px solid rgba(100,180,255,0.4); }
+        [data-theme="light"] .map-btn-360 { background: rgba(100,180,255,0.1); }
         .map-btn-360:hover { background: rgba(100,180,255,0.2); }
  
         /* ══ SOCIAL ══ */
         .social-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
-        .social-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 18px 14px; border-radius: 18px; text-decoration: none; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); transition: all 0.3s; min-width: 80px; }
+        .social-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 18px 14px; border-radius: 18px; text-decoration: none; border: 1px solid var(--social-card-border); background: var(--social-card-bg); transition: all 0.3s; min-width: 80px; }
         .social-card:hover { transform: translateY(-5px); }
         .social-card i { font-size: 28px; }
         .social-card span { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 1px; color: var(--text-muted); }
@@ -316,6 +471,20 @@
     <div class="mandala-ring mr3"></div>
     <div class="mandala-ring mr4"></div>
     <div class="mandala-ring mr5"></div>
+ 
+    <!-- PREMIUM SACRED GEOMETRY SVG BACKGROUND -->
+    <div class="sacred-bg" id="sacredBg">
+        <!-- Inline SVGs injected by JS for full theming support -->
+    </div>
+ 
+    <!-- FLOATING OM SYMBOLS -->
+    <div class="om-float" id="om1" style="font-size:120px;top:12%;left:8%;animation-duration:8s;animation-delay:0s;">ॐ</div>
+    <div class="om-float" id="om2" style="font-size:80px;top:60%;right:6%;animation-duration:11s;animation-delay:3s;">ॐ</div>
+    <div class="om-float" id="om3" style="font-size:60px;top:80%;left:15%;animation-duration:9s;animation-delay:5s;">ॐ</div>
+    <div class="om-float" id="om4" style="font-size:100px;top:35%;right:12%;animation-duration:13s;animation-delay:1s;">ॐ</div>
+    <div class="om-float" id="om5" style="font-size:50px;top:5%;right:30%;animation-duration:7s;animation-delay:6s;">ॐ</div>
+    <div class="om-float" id="om6" style="font-size:70px;top:50%;left:5%;animation-duration:10s;animation-delay:2s;">ॐ</div>
+ 
     <div class="bubble-container" id="bubbleContainer"></div>
     <canvas id="spiritual-bg"></canvas>
  
@@ -343,7 +512,13 @@
             <a href="#contact" class="anchor-link"><span class="hi">संपर्क</span><span class="en">Contact</span></a>
         </nav>
  
-        <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langBtn">Read in English</button>
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <!-- THEME TOGGLE -->
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle dark/light mode">
+                <i class="fa-solid fa-sun" id="themeIcon"></i>
+            </button>
+            <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langBtn">Read in English</button>
+        </div>
     </nav>
  
     <!-- ══ HERO ══ -->
@@ -384,7 +559,7 @@
     </section>
  
     <!-- ══ QUOTE ══ -->
-    <section style="background:linear-gradient(135deg,#1a0e08 0%,#2e1a0d 50%,#1a0e08 100%);padding:55px 30px;">
+    <section style="background:linear-gradient(135deg,var(--bg-mid-section-a) 0%,var(--bg-mid-section-b) 50%,var(--bg-mid-section-a) 100%);padding:55px 30px;">
         <div class="container">
             <div class="quote-block hi reveal">"ईश्वरीय चेतना और लोक कल्याण की भावना ही इस पावन केंद्र का मूल स्तंभ है। आनंद शक्ति सत्य के प्रकाश से हर जीवन को रोशन करने का संकल्प है।"</div>
             <div class="quote-block en reveal">"Divine consciousness and public welfare are the core pillars of this sacred center. Anand Shakti is a resolution to illuminate every life with the light of truth."</div>
@@ -392,7 +567,7 @@
     </section>
  
     <!-- ══ GURU PITA ══ -->
-    <section class="bg-lotus-pattern" id="guru-pita" style="background-color:#0d0702;">
+    <section class="bg-lotus-pattern" id="guru-pita" style="background-color:var(--bg-dark);">
         <div class="container reveal">
             <div class="two-column">
                 <div>
@@ -436,7 +611,7 @@
     <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-icon">ॐ</span><div class="sec-divider-line"></div></div>
  
     <!-- ══ YOUTUBE ══ -->
-    <section class="bg-lotus-pattern" id="youtube" style="background-color:#0d0702;">
+    <section class="bg-lotus-pattern" id="youtube" style="background-color:var(--bg-dark);">
         <div class="container reveal">
             <div style="text-align:center;margin-bottom:36px;">
                 <i class="fa-brands fa-youtube" style="font-size:48px;color:#e60000;filter:drop-shadow(0 0 18px rgba(230,0,0,0.5));display:block;margin-bottom:12px;"></i>
@@ -444,7 +619,6 @@
                 <h2 class="section-title en" style="border:none;text-align:center;font-size:36px;margin-bottom:0;">YouTube Channel</h2>
             </div>
  
-            <!-- ALL PLAYLIST CARDS -->
             <div class="playlist-grid">
                 <!-- Satsang -->
                 <div class="playlist-card">
@@ -521,7 +695,7 @@
                     </a>
                 </div>
  
-                <!-- Widow Playlist — full width -->
+                <!-- Widow Playlist full width -->
                 <div class="playlist-card playlist-card-full" style="border-color:rgba(180,120,255,0.3);">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
                         <div style="width:46px;height:46px;background:rgba(180,120,255,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;border:1px solid rgba(180,120,255,0.3);"><i class="fa-solid fa-graduation-cap" style="color:#b478ff;"></i></div>
@@ -572,7 +746,7 @@
     <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-icon">ॐ</span><div class="sec-divider-line"></div></div>
  
     <!-- ══ TIMINGS ══ -->
-    <section class="bg-lotus-pattern" id="timings" style="background-color:#0d0702;">
+    <section class="bg-lotus-pattern" id="timings" style="background-color:var(--bg-dark);">
         <div class="container reveal">
             <h2 class="section-title hi">दर्शन एवं सेवा समय</h2>
             <h2 class="section-title en">Darshan & Service Timings</h2>
@@ -642,13 +816,13 @@
                 <div class="appt-timeline">
                     <div class="appt-step">
                         <div class="appt-step-num">2</div>
-                        <div class="appt-step-label hi"><strong style="color:var(--text-light);">दिन पहले</strong><br>अनुशंसित<br><span style="color:#7fffb0;font-size:11px;">✅ Best Choice</span></div>
-                        <div class="appt-step-label en"><strong style="color:var(--text-light);">Days Before</strong><br>Recommended<br><span style="color:#7fffb0;font-size:11px;">✅ Best Choice</span></div>
+                        <div class="appt-step-label hi"><strong style="color:var(--text-primary);">दिन पहले</strong><br>अनुशंसित<br><span style="color:#7fffb0;font-size:11px;">✅ Best Choice</span></div>
+                        <div class="appt-step-label en"><strong style="color:var(--text-primary);">Days Before</strong><br>Recommended<br><span style="color:#7fffb0;font-size:11px;">✅ Best Choice</span></div>
                     </div>
                     <div class="appt-step">
                         <div class="appt-step-num">1</div>
-                        <div class="appt-step-label hi"><strong style="color:var(--text-light);">दिन पहले</strong><br>न्यूनतम<br><span style="color:#ffd700;font-size:11px;">⚠️ Subject to Slot</span></div>
-                        <div class="appt-step-label en"><strong style="color:var(--text-light);">Day Before</strong><br>Minimum<br><span style="color:#ffd700;font-size:11px;">⚠️ Subject to Slot</span></div>
+                        <div class="appt-step-label hi"><strong style="color:var(--text-primary);">दिन पहले</strong><br>न्यूनतम<br><span style="color:#ffd700;font-size:11px;">⚠️ Subject to Slot</span></div>
+                        <div class="appt-step-label en"><strong style="color:var(--text-primary);">Day Before</strong><br>Minimum<br><span style="color:#ffd700;font-size:11px;">⚠️ Subject to Slot</span></div>
                     </div>
                     <div class="appt-step">
                         <div class="appt-step-num" style="color:#ff6b6b;">0</div>
@@ -701,7 +875,7 @@
     <div class="sec-divider"><div class="sec-divider-line"></div><span class="sec-divider-icon">ॐ</span><div class="sec-divider-line"></div></div>
  
     <!-- ══ LOCATION ══ -->
-    <section class="bg-lotus-pattern" id="location" style="background-color:#0d0702;">
+    <section class="bg-lotus-pattern" id="location" style="background-color:var(--bg-dark);">
         <div class="container reveal">
             <h2 class="section-title hi">स्थान एवं मार्ग</h2>
             <h2 class="section-title en">Location & Directions</h2>
@@ -723,7 +897,7 @@
                     <i class="fa-solid fa-street-view"></i> 360° Street View
                 </a>
             </div>
-            <div style="margin-top:20px;background:rgba(255,153,51,0.05);border:1px solid rgba(255,153,51,0.2);border-radius:14px;padding:18px 22px;">
+            <div style="margin-top:20px;background:var(--map-info-bg);border:1px solid rgba(255,153,51,0.2);border-radius:14px;padding:18px 22px;">
                 <p class="hi" style="font-size:15px;color:var(--text-muted);"><i class="fa-solid fa-circle-info" style="color:var(--saffron);margin-right:8px;"></i>वॉक-इन दर्शन की अनुमति नहीं है। कृपया <strong style="color:var(--saffron);">पहले अपॉइंटमेंट लें</strong> और फिर पधारें।</p>
                 <p class="en" style="font-size:15px;color:var(--text-muted);"><i class="fa-solid fa-circle-info" style="color:var(--saffron);margin-right:8px;"></i>Walk-in visits not permitted. Please <strong style="color:var(--saffron);">book appointment first</strong> before visiting.</p>
             </div>
@@ -738,8 +912,8 @@
             <h2 class="section-title hi" style="border:none;text-align:center;margin-bottom:28px;">संपर्क स्थापित करें</h2>
             <h2 class="section-title en" style="border:none;text-align:center;margin-bottom:28px;">Contact Us</h2>
             <p style="margin-bottom:12px;"><strong style="color:var(--saffron);"><span class="hi">पता:</span><span class="en">Address:</span></strong>&nbsp;57, Chandra Nagar, Lal Bangla, Kanpur, UP — 208007</p>
-            <p style="margin-bottom:12px;"><strong style="color:var(--saffron);"><span class="hi">कॉल:</span><span class="en">Call:</span></strong>&nbsp;<a href="tel:+917080317245" style="color:var(--text-light);text-decoration:none;">+91 70803 17245</a></p>
-            <p style="margin-bottom:36px;"><strong style="color:var(--saffron);">Email:</strong>&nbsp;<a href="mailto:anandshakti2008@gmail.com" style="color:var(--text-light);text-decoration:none;">anandshakti2008@gmail.com</a></p>
+            <p style="margin-bottom:12px;"><strong style="color:var(--saffron);"><span class="hi">कॉल:</span><span class="en">Call:</span></strong>&nbsp;<a href="tel:+917080317245" style="color:var(--text-primary);text-decoration:none;">+91 70803 17245</a></p>
+            <p style="margin-bottom:36px;"><strong style="color:var(--saffron);">Email:</strong>&nbsp;<a href="mailto:anandshakti2008@gmail.com" style="color:var(--text-primary);text-decoration:none;">anandshakti2008@gmail.com</a></p>
  
             <div class="social-row" style="margin-bottom:10px;">
                 <a href="https://youtube.com/@anandshakti" target="_blank" class="social-card sc-yt"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
@@ -768,7 +942,7 @@
     </section>
  
     <!-- ══ FOOTER ══ -->
-    <section class="bg-lotus-pattern" style="background-color:#0d0702;flex-direction:column;text-align:center;padding:70px 30px 50px;">
+    <section class="bg-lotus-pattern" style="background-color:var(--footer-bg);flex-direction:column;text-align:center;padding:70px 30px 50px;">
         <div class="container">
             <div class="ornament"><div class="ornament-line"></div><span class="ornament-symbol" style="font-size:36px;">ॐ</span><div class="ornament-line rev"></div></div>
             <div class="footer-tagline hi" style="margin:26px 0 8px;">शांति और आनंद</div>
@@ -780,7 +954,125 @@
     </section>
  
     <script>
-    /* ── LANGUAGE TOGGLE ── */
+    /* ══════════════════════════════════════════
+       1. AUTO DARK / LIGHT MODE (System Preference)
+    ══════════════════════════════════════════ */
+    (function() {
+        const root = document.documentElement;
+        const btn = document.getElementById('themeBtn');
+        const icon = document.getElementById('themeIcon');
+ 
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                icon.className = 'fa-solid fa-sun';
+                btn.title = 'Switch to Light Mode';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+                btn.title = 'Switch to Dark Mode';
+            }
+            localStorage.setItem('anandshakti_theme', theme);
+            updateSacredBg(theme);
+        }
+ 
+        function getInitialTheme() {
+            const saved = localStorage.getItem('anandshakti_theme');
+            if (saved) return saved;
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+            return 'dark';
+        }
+ 
+        window.toggleTheme = function() {
+            const current = root.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        };
+ 
+        // Listen for OS-level changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('anandshakti_theme')) {
+                    applyTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+        }
+ 
+        applyTheme(getInitialTheme());
+    })();
+ 
+    /* ══════════════════════════════════════════
+       2. PREMIUM SACRED GEOMETRY BACKGROUND
+    ══════════════════════════════════════════ */
+    function updateSacredBg(theme) {
+        const container = document.getElementById('sacredBg');
+        const isDark = theme === 'dark';
+        const strokeOpacity = isDark ? 0.06 : 0.09;
+        const stroke = isDark ? '#ff9933' : '#a86000';
+ 
+        container.innerHTML = `
+        <svg style="position:absolute;inset:0;width:100%;height:100%;animation:spinSlow 90s linear infinite;" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <!-- Sri Yantra triangles -->
+            <g stroke="${stroke}" fill="none" stroke-width="0.8" opacity="${strokeOpacity}">
+                <!-- Outer lotus petals ring -->
+                ${Array.from({length:16},(_,i)=>{
+                    const a = (i/16)*Math.PI*2;
+                    const cx=600,cy=400,r1=280,r2=240;
+                    const x1=cx+Math.cos(a)*r1, y1=cy+Math.sin(a)*r1;
+                    const x2=cx+Math.cos(a+0.2)*r2, y2=cy+Math.sin(a+0.2)*r2;
+                    const x3=cx+Math.cos(a-0.2)*r2, y3=cy+Math.sin(a-0.2)*r2;
+                    return `<path d="M${x1},${y1} Q${x2},${y2} ${cx+Math.cos(a)*r2*0.8},${cy+Math.sin(a)*r2*0.8} Q${x3},${y3} ${x1},${y1}Z"/>`;
+                }).join('')}
+                <!-- Inner concentric circles -->
+                <circle cx="600" cy="400" r="300" stroke-width="0.5"/>
+                <circle cx="600" cy="400" r="240" stroke-width="0.5"/>
+                <circle cx="600" cy="400" r="180" stroke-width="0.5"/>
+                <circle cx="600" cy="400" r="120" stroke-width="0.5"/>
+                <circle cx="600" cy="400" r="60" stroke-width="0.5"/>
+                <!-- Sri Yantra upward triangles -->
+                <polygon points="600,120 780,410 420,410"/>
+                <polygon points="600,150 760,410 440,410"/>
+                <!-- Sri Yantra downward triangles -->
+                <polygon points="600,680 420,390 780,390"/>
+                <polygon points="600,650 440,390 760,390"/>
+                <!-- Star of David style -->
+                <polygon points="600,170 740,400 460,400" opacity="0.6"/>
+                <polygon points="600,630 460,400 740,400" opacity="0.6"/>
+                <!-- Radial lines -->
+                ${Array.from({length:24},(_,i)=>{
+                    const a=(i/24)*Math.PI*2;
+                    return `<line x1="600" y1="400" x2="${600+Math.cos(a)*310}" y2="${400+Math.sin(a)*310}" stroke-width="0.3"/>`;
+                }).join('')}
+            </g>
+        </svg>
+        <svg style="position:absolute;top:0;right:0;width:350px;height:350px;animation:spinSlow 60s linear infinite reverse;" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="${stroke}" fill="none" stroke-width="0.7" opacity="${strokeOpacity}">
+                ${Array.from({length:12},(_,i)=>{
+                    const a=(i/12)*Math.PI*2;
+                    const cx=175,cy=175,r=140;
+                    return `<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(a)*r}" y2="${cy+Math.sin(a)*r}"/>`;
+                }).join('')}
+                <circle cx="175" cy="175" r="140"/><circle cx="175" cy="175" r="100"/><circle cx="175" cy="175" r="60"/>
+                ${Array.from({length:8},(_,i)=>{
+                    const a=(i/8)*Math.PI*2; const r1=140,r2=100;
+                    const x1=175+Math.cos(a)*r1,y1=175+Math.sin(a)*r1;
+                    const x2=175+Math.cos(a+Math.PI/8)*r2,y2=175+Math.sin(a+Math.PI/8)*r2;
+                    const x3=175+Math.cos(a-Math.PI/8)*r2,y3=175+Math.sin(a-Math.PI/8)*r2;
+                    return `<path d="M${x1},${y1} L${x2},${y2} L${x3},${y3}Z"/>`;
+                }).join('')}
+            </g>
+        </svg>
+        <svg style="position:absolute;bottom:0;left:0;width:280px;height:280px;animation:spinSlow 50s linear infinite;" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="${stroke}" fill="none" stroke-width="0.6" opacity="${strokeOpacity}">
+                <circle cx="140" cy="140" r="120"/><circle cx="140" cy="140" r="85"/><circle cx="140" cy="140" r="50"/>
+                <polygon points="140,20 250,200 30,200"/><polygon points="140,260 30,80 250,80"/>
+                ${Array.from({length:16},(_,i)=>{
+                    const a=(i/16)*Math.PI*2;
+                    return `<line x1="${140+Math.cos(a)*50}" y1="${140+Math.sin(a)*50}" x2="${140+Math.cos(a)*120}" y2="${140+Math.sin(a)*120}" stroke-width="0.4"/>`;
+                }).join('')}
+            </g>
+        </svg>`;
+    }
+ 
+    /* ══ LANGUAGE TOGGLE ══ */
     function toggleLanguage() {
         const body = document.body;
         const btn = document.getElementById('langBtn');
@@ -788,13 +1080,13 @@
         btn.innerText = body.classList.contains('english-mode') ? 'हिंदी में पढ़ें' : 'Read in English';
     }
  
-    /* ── SCROLL REVEAL ── */
+    /* ══ SCROLL REVEAL ══ */
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
  
-    /* ── ACTIVE ANCHOR NAV ── */
+    /* ══ ACTIVE ANCHOR NAV ══ */
     const sections = ['hero','guru-pita','guru-mata','youtube','gallery','timings','booking','location','contact'];
     const anchorLinks = document.querySelectorAll('.anchor-link');
     const activeObserver = new IntersectionObserver((entries) => {
@@ -808,7 +1100,7 @@
     }, { threshold: 0.4 });
     sections.forEach(id => { const el = document.getElementById(id); if (el) activeObserver.observe(el); });
  
-    /* ── BUBBLE GENERATOR ── */
+    /* ══ BUBBLE GENERATOR ══ */
     (function() {
         const container = document.getElementById('bubbleContainer');
         const sizes = [40,60,80,100,130,160,200,50,70,90];
@@ -822,7 +1114,7 @@
         }
     })();
  
-    /* ── CANVAS MANDALA + PARTICLES ── */
+    /* ══ CANVAS MANDALA + PARTICLES ══ */
     (function() {
         const canvas = document.getElementById('spiritual-bg');
         const ctx = canvas.getContext('2d');
@@ -830,13 +1122,18 @@
         function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
         window.addEventListener('resize', resize); resize();
  
+        function getThemeColor() {
+            return document.documentElement.getAttribute('data-theme') === 'light'
+                ? { r:168, g:96, b:0 } : { r:255, g:153, b:51 };
+        }
+ 
         class Particle {
             constructor() { this.reset(); }
             reset() {
                 this.x = Math.random()*W; this.y = H+10;
                 this.size = Math.random()*2.5+0.5;
                 this.speedY = Math.random()*0.6+0.2; this.speedX = (Math.random()-0.5)*0.3;
-                this.alpha = 0; this.maxAlpha = Math.random()*0.4+0.1;
+                this.alpha = 0; this.maxAlpha = Math.random()*0.3+0.05;
                 this.life = 0; this.maxLife = Math.random()*400+200;
             }
             update() {
@@ -847,9 +1144,10 @@
                 if (this.life >= this.maxLife || this.y < -10) this.reset();
             }
             draw() {
+                const c = getThemeColor();
                 const g = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*4);
-                g.addColorStop(0,`rgba(255,153,51,${this.alpha})`);
-                g.addColorStop(0.5,`rgba(212,137,10,${this.alpha*0.5})`);
+                g.addColorStop(0,`rgba(${c.r},${c.g},${c.b},${this.alpha})`);
+                g.addColorStop(0.5,`rgba(${c.r},${c.g},${c.b},${this.alpha*0.5})`);
                 g.addColorStop(1,'rgba(0,0,0,0)');
                 ctx.beginPath(); ctx.arc(this.x,this.y,this.size*4,0,Math.PI*2);
                 ctx.fillStyle=g; ctx.fill();
@@ -860,8 +1158,9 @@
             constructor(x,y,r,speed,petals) { this.x=x;this.y=y;this.r=r;this.speed=speed;this.angle=Math.random()*Math.PI*2;this.petals=petals;this.alpha=Math.random()*0.04+0.015; }
             update(){this.angle+=this.speed;}
             draw(){
+                const c = getThemeColor();
                 ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.angle);
-                ctx.strokeStyle=`rgba(255,153,51,${this.alpha})`;ctx.lineWidth=0.5;
+                ctx.strokeStyle=`rgba(${c.r},${c.g},${c.b},${this.alpha})`;ctx.lineWidth=0.5;
                 ctx.beginPath();ctx.arc(0,0,this.r,0,Math.PI*2);ctx.stroke();
                 ctx.beginPath();ctx.arc(0,0,this.r*0.65,0,Math.PI*2);ctx.stroke();
                 for(let i=0;i<this.petals;i++){
